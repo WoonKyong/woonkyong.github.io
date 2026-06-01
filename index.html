@@ -2,240 +2,343 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="apple-mobile-web-app-title" content="아진 영단어" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="theme-color" content="#7C3AED" />
-  <title>아진이의 영단어 📚</title>
-  <link rel="stylesheet" href="./assets/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1a1a2e" />
+  <title>WoonKyong</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f1a;
+      --card-bg: #1a1a2e;
+      --card-hover: #22223b;
+      --border: rgba(255,255,255,0.08);
+      --text: #f0f0f5;
+      --text-sub: #9090a8;
+      --radius: 16px;
+
+      --travel:  #f97316;
+      --finance: #22c55e;
+      --english: #7c3aed;
+      --etc:     #06b6d4;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      padding: 28px 24px 0;
+    }
+    .site-title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .site-title span { color: var(--english); }
+
+    /* ===== MAIN ===== */
+    main {
+      flex: 1;
+      padding: 32px 20px 48px;
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .page-heading {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .page-sub {
+      color: var(--text-sub);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+
+    /* ===== CATEGORY GRID ===== */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .category-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s, transform 0.15s, border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .category-card:hover {
+      background: var(--card-hover);
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+    .category-card:active { transform: translateY(0); }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      background: color-mix(in srgb, var(--accent) 18%, transparent);
+    }
+    .card-name {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.5;
+    }
+    .card-count {
+      margin-top: auto;
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* accent per category */
+    .cat-travel  { --accent: var(--travel);  }
+    .cat-finance { --accent: var(--finance); }
+    .cat-english { --accent: var(--english); }
+    .cat-etc     { --accent: var(--etc);     }
+
+    /* ===== ITEMS SECTION ===== */
+    .section {
+      margin-top: 40px;
+      display: none;
+    }
+    .section.active { display: block; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .section-back {
+      background: none;
+      border: none;
+      color: var(--text-sub);
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+      padding: 4px;
+    }
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .item-link {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .item-link:hover {
+      background: var(--card-hover);
+      border-color: rgba(255,255,255,0.15);
+    }
+    .item-emoji { font-size: 22px; flex-shrink: 0; }
+    .item-info { flex: 1; }
+    .item-name { font-size: 15px; font-weight: 600; }
+    .item-desc { font-size: 12px; color: var(--text-sub); margin-top: 2px; }
+    .item-arrow { color: var(--text-sub); font-size: 14px; }
+
+    .empty-msg {
+      color: var(--text-sub);
+      font-size: 14px;
+      text-align: center;
+      padding: 32px 0;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      color: var(--text-sub);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 400px) {
+      .categories { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- ===== LOADING SCREEN ===== -->
-<div id="loading-screen" class="loading-screen">
-  <div class="loading-spinner"></div>
-  <p style="color: var(--text-light); font-size: 15px;">단어를 불러오는 중...</p>
-</div>
+<header>
+  <div class="site-title">WK<span>.</span></div>
+</header>
 
-<!-- ===== APP (hidden until loaded) ===== -->
-<div id="app" style="display:none; flex-direction:column; min-height:100dvh;">
+<main>
+  <!-- Category grid -->
+  <div id="home">
+    <h1 class="page-heading">안녕하세요 👋</h1>
+    <p class="page-sub">카테고리를 선택하세요</p>
 
-  <!-- Header (hidden during study) -->
-  <header class="app-header">
-    <span class="header-title">📚 아진이의 영단어</span>
-    <span class="header-right" id="header-right"></span>
-  </header>
+    <div class="categories">
+      <a class="category-card cat-travel" href="#travel" onclick="showSection('travel'); return false;">
+        <div class="card-icon">✈️</div>
+        <div class="card-name">여행</div>
+        <div class="card-desc">여행 관련 도구 및 정보</div>
+        <div class="card-count" id="count-travel"></div>
+      </a>
 
-  <!-- ======================== HOME SCREEN ======================== -->
-  <main id="screen-home" class="screen">
-    <!-- Greeting -->
-    <div>
-      <div class="home-greeting">안녕, <span>아진</span>! 👋</div>
-      <div class="home-date" id="home-date"></div>
+      <a class="category-card cat-finance" href="#finance" onclick="showSection('finance'); return false;">
+        <div class="card-icon">💰</div>
+        <div class="card-name">금융</div>
+        <div class="card-desc">금융 계산 및 관리 도구</div>
+        <div class="card-count" id="count-finance"></div>
+      </a>
+
+      <a class="category-card cat-english" href="#english" onclick="showSection('english'); return false;">
+        <div class="card-icon">📚</div>
+        <div class="card-name">영어</div>
+        <div class="card-desc">영어 학습 도구</div>
+        <div class="card-count" id="count-english"></div>
+      </a>
+
+      <a class="category-card cat-etc" href="#etc" onclick="showSection('etc'); return false;">
+        <div class="card-icon">🛠️</div>
+        <div class="card-name">기타</div>
+        <div class="card-desc">그 외 유용한 도구들</div>
+        <div class="card-count" id="count-etc"></div>
+      </a>
     </div>
-
-    <!-- Streak banner -->
-    <div class="streak-banner">
-      <div class="streak-fire">🔥</div>
-      <div class="streak-text">
-        <strong id="streak-count">0</strong>
-        <span id="streak-msg">오늘 첫 시작이에요!</span>
-      </div>
-    </div>
-
-    <!-- Today's study card -->
-    <div class="today-card">
-      <div class="today-card-title">오늘의 학습</div>
-      <div class="today-stats">
-        <div class="today-stat">
-          <div class="stat-num" id="today-new-count">0</div>
-          <div class="stat-label">새 단어</div>
-        </div>
-        <div class="today-stat">
-          <div class="stat-num" id="today-review-count">0</div>
-          <div class="stat-label">복습 단어</div>
-        </div>
-      </div>
-      <button class="btn-start" id="btn-start-study">📚 오늘 학습 시작하기</button>
-      <div class="session-done-msg" id="session-done-msg" style="display:none;"></div>
-    </div>
-
-    <!-- Overall progress -->
-    <div class="total-progress">
-      <div class="progress-label">
-        <span>전체 학습 진행도</span>
-        <span id="progress-pct-text">0 / 100</span>
-      </div>
-      <div class="progress-bar-track">
-        <div class="progress-bar-fill" id="progress-bar-fill" style="width: 0%"></div>
-      </div>
-    </div>
-  </main>
-
-  <!-- ======================== STUDY SCREEN ======================== -->
-  <div id="screen-study" class="screen">
-    <!-- Study-specific header -->
-    <div class="study-header">
-      <button class="study-close-btn" id="study-close-btn" aria-label="학습 나가기">✕</button>
-      <div class="study-progress-bar">
-        <div class="study-progress-fill" id="study-progress-fill" style="width:0%"></div>
-      </div>
-      <div class="study-counter" id="study-counter">0/0</div>
-    </div>
-    <!-- Dynamic content injected here -->
-    <div class="study-content" id="study-content"></div>
   </div>
 
-  <!-- ======================== WORD LIST SCREEN ======================== -->
-  <main id="screen-wordlist" class="screen">
-    <div>
-      <div class="section-title">단어장 📖</div>
-      <div class="section-subtitle" id="wordlist-count">학습한 단어 0개</div>
+  <!-- Travel section -->
+  <div class="section" id="section-travel">
+    <div class="section-header">
+      <button class="section-back" onclick="showHome()">←</button>
+      <span class="card-icon" style="--accent:var(--travel)">✈️</span>
+      <span class="section-title">여행</span>
     </div>
-    <input
-      type="search"
-      class="wordlist-search"
-      id="wordlist-search"
-      placeholder="🔍 단어 또는 뜻 검색..."
-      autocomplete="off"
-      autocorrect="off"
-      spellcheck="false"
-    />
-    <div class="wordlist-items" id="wordlist-items">
-      <div class="empty-state">
-        <div class="empty-icon">📚</div>
-        <p>아직 학습한 단어가 없어요.<br>오늘 학습을 시작해봐요!</p>
-      </div>
+    <div class="item-list" id="items-travel">
+      <a class="item-link" href="./travel-matsuyama-2026.html">
+        <span class="item-emoji">🇯🇵</span>
+        <div class="item-info">
+          <div class="item-name">마쓰야마 3박 4일 (2026.06)</div>
+          <div class="item-desc">준비물 체크리스트 · 일정표 · 타이메시 팁</div>
+        </div>
+        <span class="item-arrow">›</span>
+      </a>
     </div>
-  </main>
+  </div>
 
-  <!-- ======================== WRONG NOTES SCREEN ======================== -->
-  <main id="screen-wrong" class="screen">
-    <div>
-      <div class="section-title">오답노트 ❌</div>
-      <div class="section-subtitle" id="wrong-count">틀린 적 있는 단어 0개</div>
+  <!-- Finance section -->
+  <div class="section" id="section-finance">
+    <div class="section-header">
+      <button class="section-back" onclick="showHome()">←</button>
+      <span class="card-icon" style="--accent:var(--finance)">💰</span>
+      <span class="section-title">금융</span>
     </div>
-    <button class="btn-retry-all" id="btn-retry-wrong-all" style="display:none;">
-      🔄 틀린 단어 전체 다시 풀기
-    </button>
-    <div class="wordlist-items" id="wrong-items">
-      <div class="empty-state">
-        <div class="empty-icon">✨</div>
-        <p>오답노트가 비어있어요!<br>틀린 단어가 없어요. 대단해요!</p>
-      </div>
+    <div class="item-list" id="items-finance">
+      <p class="empty-msg">준비 중입니다 🚧</p>
     </div>
-  </main>
+  </div>
 
-  <!-- ======================== STATS SCREEN ======================== -->
-  <main id="screen-stats" class="screen">
-    <div>
-      <div class="section-title">학습 현황 📊</div>
+  <!-- English section -->
+  <div class="section" id="section-english">
+    <div class="section-header">
+      <button class="section-back" onclick="showHome()">←</button>
+      <span class="card-icon" style="--accent:var(--english)">📚</span>
+      <span class="section-title">영어</span>
     </div>
-
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="sc-icon">📚</div>
-        <div class="sc-num" id="stat-learned">0</div>
-        <div class="sc-label">학습한 단어</div>
-      </div>
-      <div class="stat-card">
-        <div class="sc-icon">🔥</div>
-        <div class="sc-num" id="stat-streak">0</div>
-        <div class="sc-label">연속 학습일</div>
-      </div>
-      <div class="stat-card">
-        <div class="sc-icon">📅</div>
-        <div class="sc-num" id="stat-due">0</div>
-        <div class="sc-label">오늘 복습 필요</div>
-      </div>
-      <div class="stat-card">
-        <div class="sc-icon">✏️</div>
-        <div class="sc-num" id="stat-attempts">0</div>
-        <div class="sc-label">총 풀이 횟수</div>
-      </div>
+    <div class="item-list" id="items-english">
+      <a class="item-link" href="./english-vocab.html">
+        <span class="item-emoji">📖</span>
+        <div class="item-info">
+          <div class="item-name">아진이의 영단어</div>
+          <div class="item-desc">중1 영단어 학습 앱</div>
+        </div>
+        <span class="item-arrow">›</span>
+      </a>
     </div>
+  </div>
 
-    <!-- Accuracy -->
-    <div class="accuracy-card">
-      <div class="accuracy-title">전체 정확도</div>
-      <div class="accuracy-bar-track">
-        <div class="accuracy-bar-fill" id="accuracy-bar-fill" style="width: 0%"></div>
-      </div>
-      <div class="accuracy-pct" id="stat-accuracy">0%</div>
+  <!-- Etc section -->
+  <div class="section" id="section-etc">
+    <div class="section-header">
+      <button class="section-back" onclick="showHome()">←</button>
+      <span class="card-icon" style="--accent:var(--etc)">🛠️</span>
+      <span class="section-title">기타</span>
     </div>
-
-    <!-- Progress -->
-    <div class="total-progress">
-      <div class="progress-label">
-        <span>전체 학습 진행도</span>
-        <span id="stats-progress-text">0 / 100</span>
-      </div>
-      <div class="progress-bar-track">
-        <div class="progress-bar-fill" id="stats-progress-fill" style="width: 0%"></div>
-      </div>
+    <div class="item-list" id="items-etc">
+      <p class="empty-msg">준비 중입니다 🚧</p>
     </div>
+  </div>
+</main>
 
-    <!-- Reset data (bottom, subtle) -->
-    <div style="text-align:center; margin-top: 8px;">
-      <button
-        id="btn-reset"
-        style="font-size:12px; color: var(--text-light); padding: 8px 16px; border-radius: 20px; background: var(--surface2);"
-        aria-label="학습 데이터 초기화"
-      >
-        ⚠️ 학습 기록 초기화
-      </button>
-    </div>
-  </main>
-
-  <!-- ======================== BOTTOM NAVIGATION ======================== -->
-  <nav class="bottom-nav" role="navigation" aria-label="메인 메뉴">
-    <button class="nav-btn active" data-screen="home" aria-label="홈">
-      <span class="nav-icon">🏠</span>
-      <span>홈</span>
-    </button>
-    <button class="nav-btn" data-screen="wordlist" aria-label="단어장">
-      <span class="nav-icon">📖</span>
-      <span>단어장</span>
-    </button>
-    <button class="nav-btn" data-screen="wrong" aria-label="오답노트">
-      <span class="nav-icon">❌</span>
-      <span>오답노트</span>
-    </button>
-    <button class="nav-btn" data-screen="stats" aria-label="통계">
-      <span class="nav-icon">📊</span>
-      <span>현황</span>
-    </button>
-  </nav>
-
-</div><!-- /#app -->
-
-<!-- ======================== WORD DETAIL MODAL ======================== -->
-<div class="modal-overlay hidden" id="word-modal" role="dialog" aria-modal="true" aria-label="단어 상세">
-  <div class="modal-sheet" id="modal-sheet"></div>
-</div>
-
-<!-- Scripts -->
-<script src="./assets/srs.js"></script>
-<script src="./assets/tts.js"></script>
-<script src="./assets/app.js"></script>
+<footer>© 2026 WoonKyong</footer>
 
 <script>
-  // Reset button (stats screen)
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('btn-reset')?.addEventListener('click', () => {
-      if (confirm('⚠️ 모든 학습 기록이 삭제됩니다.\n정말 초기화할까요?')) {
-        Object.values({
-          PROGRESS: 'ajin_progress_v2',
-          SESSION:  'ajin_session_v2',
-          SETTINGS: 'ajin_settings_v2',
-          STREAK:   'ajin_streak_v2'
-        }).forEach(k => localStorage.removeItem(k));
-        location.reload();
-      }
-    });
+  const ITEMS = {
+    travel:  [{ name: '마쓰야마 3박 4일 (2026.06)', desc: '준비물 체크리스트 · 일정표 · 타이메시 팁', emoji: '🇯🇵', href: './travel-matsuyama-2026.html' }],
+    finance: [],
+    english: [{ name: '아진이의 영단어', desc: '중1 영단어 학습 앱', emoji: '📖', href: './english-vocab.html' }],
+    etc:     [],
+  };
+
+  // Update counts on cards
+  Object.entries(ITEMS).forEach(([cat, list]) => {
+    const el = document.getElementById('count-' + cat);
+    if (el) el.textContent = list.length > 0 ? `${list.length}개` : '';
   });
+
+  function showSection(cat) {
+    document.getElementById('home').style.display = 'none';
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById('section-' + cat).classList.add('active');
+    window.scrollTo(0, 0);
+    location.hash = cat;
+  }
+
+  function showHome() {
+    document.getElementById('home').style.display = '';
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    window.scrollTo(0, 0);
+    history.pushState('', document.title, window.location.pathname);
+  }
+
+  // Handle direct URL with hash
+  const hash = location.hash.replace('#', '');
+  if (['travel', 'finance', 'english', 'etc'].includes(hash)) {
+    showSection(hash);
+  }
 </script>
 
 </body>

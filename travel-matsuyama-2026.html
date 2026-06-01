@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1a1a2e" />
+  <title>마쓰야마 여행 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f1a;
+      --card-bg: #1a1a2e;
+      --card-hover: #22223b;
+      --border: rgba(255,255,255,0.08);
+      --text: #f0f0f5;
+      --text-sub: #9090a8;
+      --accent: #f97316;
+      --accent-dim: rgba(249,115,22,0.15);
+      --radius: 14px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 20px 0;
+    }
+    .back-btn {
+      background: none;
+      border: none;
+      color: var(--text-sub);
+      font-size: 20px;
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .back-btn:hover { background: var(--card-bg); }
+    .nav-trail { font-size: 13px; color: var(--text-sub); }
+    .nav-trail span { color: var(--text); }
+
+    /* ===== MAIN ===== */
+    main {
+      flex: 1;
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 24px 20px 60px;
+    }
+
+    /* ===== PAGE HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, rgba(249,115,22,0.18), rgba(249,115,22,0.04));
+      border: 1px solid rgba(249,115,22,0.25);
+      border-radius: var(--radius);
+      padding: 24px 22px;
+      margin-bottom: 28px;
+    }
+    .hero-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .hero-title {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .hero-meta {
+      font-size: 13px;
+      color: var(--text-sub);
+    }
+
+    /* ===== SECTION BLOCK ===== */
+    .block {
+      margin-bottom: 32px;
+    }
+    .block-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .block-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--accent-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    /* ===== CHECKLIST ===== */
+    .checklist-group {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .checklist-group-title {
+      padding: 12px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(249,115,22,0.07);
+      border-bottom: 1px solid var(--border);
+    }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.15s;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .checklist-item:last-child { border-bottom: none; }
+    .checklist-item:hover { background: var(--card-hover); }
+    .checklist-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+    .checklist-text {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text);
+    }
+    .checklist-text sub {
+      font-size: 12px;
+      color: var(--text-sub);
+    }
+    .checklist-item.done .checklist-text {
+      text-decoration: line-through;
+      color: var(--text-sub);
+    }
+
+    /* ===== ITINERARY ===== */
+    .day-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+    .day-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      background: rgba(249,115,22,0.07);
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+    .day-badge {
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 20px;
+      flex-shrink: 0;
+    }
+    .day-title {
+      font-size: 14px;
+      font-weight: 700;
+      flex: 1;
+    }
+    .day-toggle { font-size: 16px; color: var(--text-sub); transition: transform 0.2s; }
+    .day-card.open .day-toggle { transform: rotate(180deg); }
+
+    .day-body { display: none; }
+    .day-card.open .day-body { display: block; }
+
+    .schedule-item {
+      display: flex;
+      gap: 14px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .schedule-item:last-child { border-bottom: none; }
+    .schedule-time {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 600;
+      white-space: nowrap;
+      min-width: 80px;
+      padding-top: 2px;
+    }
+    .schedule-content {}
+    .schedule-main {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+    .schedule-desc {
+      font-size: 12px;
+      color: var(--text-sub);
+      line-height: 1.55;
+    }
+
+    /* ===== TIP BOX ===== */
+    .tip-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .tip-header {
+      padding: 14px 16px;
+      background: rgba(249,115,22,0.07);
+      border-bottom: 1px solid var(--border);
+    }
+    .tip-name {
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .tip-sub {
+      font-size: 12px;
+      color: var(--text-sub);
+      margin-top: 2px;
+    }
+    .tip-body {
+      padding: 14px 16px;
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+    .tip-body strong { color: var(--text); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      color: var(--text-sub);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 480px) {
+      .schedule-time { min-width: 64px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <button class="back-btn" onclick="history.back()">←</button>
+  <div class="nav-trail">여행 <span>/ 마쓰야마 2026</span></div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-label">✈️ 여행 플랜</div>
+    <div class="hero-title">🇯🇵 마쓰야마 3박 4일</div>
+    <div class="hero-meta">2026.06.10 (수) – 06.13 (토) · 제주항공 7C1703/1704</div>
+  </div>
+
+  <!-- ============================
+       1. 출국 전 준비물 체크리스트
+       ============================ -->
+  <div class="block">
+    <div class="block-title">
+      <div class="block-icon">🧳</div>
+      출국 전 최종 준비물 체크리스트
+    </div>
+
+    <!-- 필수 서류 & 금융 -->
+    <div class="checklist-group">
+      <div class="checklist-group-title">📄 필수 서류 &amp; 금융</div>
+      <label class="checklist-item" onclick="toggleCheck(this)">
+        <input type="checkbox" />
+        <span class="checklist-text">여권 및 스마트폰 내 여권 사진 페이지 캡처본</span>
+      </label>
+      <label class="checklist-item" onclick="toggleCheck(this)">
+        <input type="checkbox" />
+        <span class="checklist-text">만약의 상황을 대비한 여권 종이 복사본 1장</span>
+      </label>
+      <label class="checklist-item" onclick="toggleCheck(this)">
+        <input type="checkbox" />
+        <span class="checklist-text">Visit Japan Web QR 코드 캡처본<br><sub>숙소는 REF 마쓰야마 입력</sub></span>
+      </label>
+      <label class="checklist-item" onclick="toggleCheck(this)">
+        <input type="checkbox" />
+        <span class="checklist-text">해외 결제 가능한 신용/체크카드 2장<br><sub>주 사용 카드 + 비상용</sub></span>
+      </label>
+      <label class="checklist-item" onclick="toggleCheck(this)">
+        <input type="checkbox" />
+        <span class="checklist-text">엔화 현금 1~2만 엔<br><sub>로컬 맛집, 노면전차, 온천가 기념품샵 현금 결제용</sub></span>
+      </label>
+    </div>
+
+    <!-- 데이터 & 전자기기 -->
+    <div class="checklist-group">
+      <div class="checklist-group-title">📱 데이터 &amp; 전자기기</div>
+      <label class="checklist-item" onclick="toggleCheck(this)">
+        <input type="checkbox" />
+        <span class="checklist-text">유심스토어 eSIM 3일권(72시간형) QR 바우처 저장<br><sub>본인 및 아내분</sub></span>
+      </label>
+      <label class="checklist-item" onclick="toggleCheck(this)">
+        <input type="checkbox" />
+        <span class="checklist-text">110V 돼지코 변환 플러그 (2~3개) + 멀티탭</span>
+      </label>
+      <label class="checklist-item" onclick="toggleCheck(this)">
+        <input type="checkbox" />
+        <span class="checklist-text">보조배터리<br><sub>반드시 기내 휴대 가방에 탑재</sub></span>
+      </label>
+    </div>
+
+    <!-- 우천 & 온천 대비 -->
+    <div class="checklist-group">
+      <div class="checklist-group-title">🌧️ 6월 장마철(우천) 및 온천 대비</div>
+      <label class="checklist-item" onclick="toggleCheck(this)">
+        <input type="checkbox" />
+        <span class="checklist-text">접이식 우산 또는 가벼운 우비</span>
+      </label>
+      <label class="checklist-item" onclick="toggleCheck(this)">
+        <input type="checkbox" />
+        <span class="checklist-text">방수 기능이 있거나 잘 마르는 편한 신발<br><sub>6월은 마쓰야마 연중 강수량이 가장 많은 시기, 신발 젖음 대비 필수</sub></span>
+      </label>
+      <label class="checklist-item" onclick="toggleCheck(this)">
+        <input type="checkbox" />
+        <span class="checklist-text">에어컨 냉방 및 비 온 뒤 쌀쌀함에 대비한 얇은 긴팔 겉옷</span>
+      </label>
+      <label class="checklist-item" onclick="toggleCheck(this)">
+        <input type="checkbox" />
+        <span class="checklist-text">족욕이나 온천 후 닦을 수 있는 작은 손수건</span>
+      </label>
+      <label class="checklist-item" onclick="toggleCheck(this)">
+        <input type="checkbox" />
+        <span class="checklist-text">젖은 옷가지나 소품을 담을 비닐 지퍼백 및 작은 비닐봉투 수십 장</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- ============================
+       2. 3박 4일 일정표
+       ============================ -->
+  <div class="block">
+    <div class="block-title">
+      <div class="block-icon">🗓️</div>
+      3박 4일 여유 중심 최종 일정표
+    </div>
+
+    <!-- Day 1 -->
+    <div class="day-card open">
+      <div class="day-header" onclick="toggleDay(this)">
+        <span class="day-badge">1일차</span>
+        <span class="day-title">6월 10일 (수) · 무리하지 않는 첫날, 아케이드 산책과 대욕장</span>
+        <span class="day-toggle">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="schedule-item">
+          <div class="schedule-time">10:00 ~ 12:30</div>
+          <div class="schedule-content">
+            <div class="schedule-main">인천공항 도착 및 스카이허브 라운지 식사</div>
+            <div class="schedule-desc">게이트 위치 확인 후 동편/서편/탑승동 중 선택</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">13:15 ~ 14:50</div>
+          <div class="schedule-content">
+            <div class="schedule-main">✈️ 인천(ICN) → 마쓰야마(MYJ)</div>
+            <div class="schedule-desc">제주항공 7C1703</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">15:00 ~ 16:30</div>
+          <div class="schedule-content">
+            <div class="schedule-main">입국 후 무료 셔틀버스 탑승 → 마쓰야마시역 하차</div>
+            <div class="schedule-desc">한국인 데스크에서 쿠폰북 및 셔틀권 수령</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">16:30 ~ 17:00</div>
+          <div class="schedule-content">
+            <div class="schedule-main">🏨 숙소 체크인</div>
+            <div class="schedule-desc">REF 마쓰야마 시티 스테이션 바이 베셀 호텔 (역 직결) — 짐을 풀고 잠시 휴식</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">17:00 ~ 18:00</div>
+          <div class="schedule-content">
+            <div class="schedule-main">🎡 쿠루린 대관람차 탑승</div>
+            <div class="schedule-desc">다카시마야 백화점 옥상 — 무료 쿠폰으로 관람차를 타며 석양과 시내 전경 감상</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">18:00 ~</div>
+          <div class="schedule-content">
+            <div class="schedule-main">🍚 타이메시 저녁 식사 &amp; 아케이드 산책</div>
+            <div class="schedule-desc">긴텐가-오카이도 아케이드를 가볍게 걸으며 첫 현지 식사로 도미밥 즐기기. 호텔 2층 대욕장에서 온천욕으로 첫날 마무리.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="day-card open">
+      <div class="day-header" onclick="toggleDay(this)">
+        <span class="day-badge">2일차</span>
+        <span class="day-title">6월 11일 (목) · 마쓰야마성 중심의 도심 문화일</span>
+        <span class="day-toggle">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="schedule-item">
+          <div class="schedule-time">09:30 ~</div>
+          <div class="schedule-content">
+            <div class="schedule-main">🏯 마쓰야마성 관람</div>
+            <div class="schedule-desc">무료 쿠폰으로 로프웨이 또는 1인승 리프트를 타고 성에 올라 탁 트인 세토내해 감상</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">점심</div>
+          <div class="schedule-content">
+            <div class="schedule-main">🍱 향토요리점 '고시키(五志喜)'</div>
+            <div class="schedule-desc">1635년 창업 유서 깊은 곳에서 마쓰야마식 또는 우와지마식 타이메시와 지역 식재료 요리 맛보기</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">오후</div>
+          <div class="schedule-content">
+            <div class="schedule-main">🏛️ 반스이소 &amp; 언덕 위의 구름 뮤지엄</div>
+            <div class="schedule-desc">프랑스풍 별장 반스이소와 안도 다다오 디자인의 건축물을 호젓하게 관람</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">늦은 오후</div>
+          <div class="schedule-content">
+            <div class="schedule-main">☕ 오카이도 카페 투어 및 쇼핑</div>
+            <div class="schedule-desc">오카이도 주변의 예쁜 디저트 카페에서 티타임을 가지며 여유 부리기</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">저녁</div>
+          <div class="schedule-content">
+            <div class="schedule-main">🍜 오카이도 주변 맛집 탐방</div>
+            <div class="schedule-desc">나베야키 우동이나 로컬 이자카야에서 깔끔하게 식사 후 호텔 대욕장 휴식</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="day-card open">
+      <div class="day-header" onclick="toggleDay(this)">
+        <span class="day-badge">3일차</span>
+        <span class="day-title">6월 12일 (금) · 온천 마을로 이동, 온전한 료칸 힐링</span>
+        <span class="day-toggle">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="schedule-item">
+          <div class="schedule-time">10:00 ~</div>
+          <div class="schedule-content">
+            <div class="schedule-main">🏨 REF 호텔 체크아웃 및 도고 온천 이동</div>
+            <div class="schedule-desc">노면전차(트램)를 타고 도고온천역으로 이동 (약 20분 소요)</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">10:30 ~ 12:00</div>
+          <div class="schedule-content">
+            <div class="schedule-main">🧳 도고칸 짐 보관 &amp; 하이카라도리 산책</div>
+            <div class="schedule-desc">최고급 료칸 도고칸에 캐리어를 먼저 맡기고 도고온천 본관 외관 구경, 하이카라도리 상점가 산책</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">점심</div>
+          <div class="schedule-content">
+            <div class="schedule-main">🍚 마쓰야마 타이메시 아키요시(秋嘉) 도고점</div>
+            <div class="schedule-desc">도고온천역 인근 — 목/금 정상 영업, 현지 영업일 재확인 요망</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">13:00 ~ 15:00</div>
+          <div class="schedule-content">
+            <div class="schedule-main">♨️ 아스카노유 온천 체험</div>
+            <div class="schedule-desc">도고칸 프런트에서 온천 바구니·타월을 빌려 무료 쿠폰으로 아스카노유(별관)에서 입욕</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">15:00 ~</div>
+          <div class="schedule-content">
+            <div class="schedule-main">🌿 하이라이트: 도고칸 체크인 &amp; 가이세키 석식</div>
+            <div class="schedule-desc">안도 다다오가 설계한 전통 료칸 입성. 방에서 차를 마시며 휴식 후 최고급 가이세키 석식. 빗소리를 들으며 노천탕 밤 온천.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="day-card open">
+      <div class="day-header" onclick="toggleDay(this)">
+        <span class="day-badge">4일차</span>
+        <span class="day-title">6월 13일 (토) · 서두르지 않는 아침, 기념품 쇼핑 및 귀국</span>
+        <span class="day-toggle">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="schedule-item">
+          <div class="schedule-time">08:00 ~ 10:00</div>
+          <div class="schedule-content">
+            <div class="schedule-main">♨️ 아침 온천 &amp; 조식</div>
+            <div class="schedule-desc">도고칸 노천탕에서 마지막 아침 온천 후 정갈한 일식 조식</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">10:00 ~ 11:00</div>
+          <div class="schedule-content">
+            <div class="schedule-main">📸 도고 온천가 마지막 산책</div>
+            <div class="schedule-desc">봇짱 카라쿠리 시계탑 앞 부부 기념사진 촬영. 하이카라도리에서 귤 젤리·타올 등 기념품 쇼핑.</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">11:15 ~</div>
+          <div class="schedule-content">
+            <div class="schedule-main">🚌 공항 이동</div>
+            <div class="schedule-desc">도고온천역 정류장 기준 한국인 무료 셔틀버스 시간 현지 더블 체크<br><strong>[플랜 B]</strong> 무료 셔틀 놓치거나 만석 시 → 공항 리무진 버스(유료) 또는 택시로 전환</div>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="schedule-time">15:50</div>
+          <div class="schedule-content">
+            <div class="schedule-main">✈️ 마쓰야마(MYJ) → 인천(ICN) 출발</div>
+            <div class="schedule-desc">제주항공 7C1704</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================
+       3. 타이메시 팁
+       ============================ -->
+  <div class="block">
+    <div class="block-title">
+      <div class="block-icon">🐟</div>
+      알고 먹으면 더 맛있는 타이메시(도미밥) 팁
+    </div>
+    <p style="font-size: 13px; color: var(--text-sub); margin-bottom: 14px; line-height: 1.6;">
+      여행 중 두 가지 스타일을 주문해 비교하며 드시면 소소한 재미가 있습니다.
+    </p>
+
+    <div class="tip-card">
+      <div class="tip-header">
+        <div class="tip-name">마쓰야마식 (북부 스타일)</div>
+        <div class="tip-sub">솥밥 방식 — 익힌 생선 요리 느낌</div>
+      </div>
+      <div class="tip-body">
+        도미 한 마리를 통째로 쌀, 간장 기반의 돗토리 육수와 함께 솥에 넣어 밥을 짓는 방식.<br>
+        <strong>담백하고 깊은 풍미의 밥맛</strong>과 부드러운 도미 살을 따뜻하게 즐길 수 있습니다.
+      </div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-header">
+        <div class="tip-name">우와지마식 (남부 스타일)</div>
+        <div class="tip-sub">회덮밥 방식 — 회덮밥/간장계란밥 느낌</div>
+      </div>
+      <div class="tip-body">
+        따뜻한 흰 밥 위에 신선한 생도미 회를 얹은 후, 달콤 짭조름한 특제 간장 양념에 날달걀 노른자와 참깨 등을 섞은 소스를 부어 비벼 먹는 방식.<br>
+        <strong>쫀득한 식감과 고소하고 진한 감칠맛</strong>이 일품입니다.
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>© 2026 WoonKyong · 마쓰야마 즐거운 여행 되세요! 🍊</footer>
+
+<script>
+  function toggleCheck(label) {
+    const cb = label.querySelector('input[type="checkbox"]');
+    // 실제 checkbox 클릭 시 이벤트 중복 방지
+    if (event && event.target === cb) return;
+    cb.checked = !cb.checked;
+    label.classList.toggle('done', cb.checked);
+    saveState();
+  }
+
+  // checkbox 직접 클릭 처리
+  document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', () => {
+      cb.closest('.checklist-item').classList.toggle('done', cb.checked);
+      saveState();
+    });
+  });
+
+  function toggleDay(header) {
+    header.closest('.day-card').classList.toggle('open');
+  }
+
+  // ===== Persist checklist state in localStorage =====
+  const STORAGE_KEY = 'matsuyama-checklist-2026';
+
+  function saveState() {
+    const state = {};
+    document.querySelectorAll('.checklist-item').forEach((item, i) => {
+      state[i] = item.querySelector('input').checked;
+    });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
+
+  function loadState() {
+    try {
+      const state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+      document.querySelectorAll('.checklist-item').forEach((item, i) => {
+        if (state[i]) {
+          item.querySelector('input').checked = true;
+          item.classList.add('done');
+        }
+      });
+    } catch (e) {}
+  }
+
+  loadState();
+</script>
+
+</body>
+</html>
