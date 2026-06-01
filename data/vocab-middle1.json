@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1, "word": "apple", "meaningKo": "사과", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "I eat an apple every morning.", "ko": "나는 매일 아침 사과를 먹어요."},
+      {"en": "She gave me a red apple.", "ko": "그녀가 나에게 빨간 사과를 줬어요."},
+      {"en": "This apple is very sweet.", "ko": "이 사과는 매우 달아요."}
+    ]
+  },
+  {
+    "id": 2, "word": "book", "meaningKo": "책", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "I read a book before bed.", "ko": "나는 잠자기 전에 책을 읽어요."},
+      {"en": "This book is very interesting.", "ko": "이 책은 정말 재미있어요."},
+      {"en": "Put your book in the bag.", "ko": "가방에 책을 넣어요."}
+    ]
+  },
+  {
+    "id": 3, "word": "cat", "meaningKo": "고양이", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "My cat is very cute.", "ko": "내 고양이는 정말 귀여워요."},
+      {"en": "The cat is sleeping on the bed.", "ko": "고양이가 침대 위에서 자고 있어요."},
+      {"en": "I want to have a cat.", "ko": "나는 고양이를 키우고 싶어요."}
+    ]
+  },
+  {
+    "id": 4, "word": "dog", "meaningKo": "개", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "My dog loves to run.", "ko": "내 강아지는 달리는 것을 좋아해요."},
+      {"en": "The dog is very friendly.", "ko": "그 개는 매우 친근해요."},
+      {"en": "I walk my dog every morning.", "ko": "나는 매일 아침 강아지를 산책시켜요."}
+    ]
+  },
+  {
+    "id": 5, "word": "school", "meaningKo": "학교", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "I go to school every day.", "ko": "나는 매일 학교에 가요."},
+      {"en": "My school is not far from home.", "ko": "우리 학교는 집에서 멀지 않아요."},
+      {"en": "School starts at eight o'clock.", "ko": "학교는 8시에 시작해요."}
+    ]
+  },
+  {
+    "id": 6, "word": "friend", "meaningKo": "친구", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "She is my best friend.", "ko": "그녀는 내 가장 친한 친구예요."},
+      {"en": "I play with my friends after school.", "ko": "나는 방과 후에 친구들과 놀아요."},
+      {"en": "A good friend is very important.", "ko": "좋은 친구는 매우 중요해요."}
+    ]
+  },
+  {
+    "id": 7, "word": "family", "meaningKo": "가족", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "I love my family very much.", "ko": "나는 우리 가족을 정말 사랑해요."},
+      {"en": "My family eats dinner together.", "ko": "우리 가족은 함께 저녁을 먹어요."},
+      {"en": "There are four people in my family.", "ko": "우리 가족은 4명이에요."}
+    ]
+  },
+  {
+    "id": 8, "word": "water", "meaningKo": "물", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "Please drink plenty of water.", "ko": "물을 많이 마시세요."},
+      {"en": "I need a glass of water.", "ko": "나는 물 한 잔이 필요해요."},
+      {"en": "The water is very cold.", "ko": "물이 매우 차가워요."}
+    ]
+  },
+  {
+    "id": 9, "word": "food", "meaningKo": "음식", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "Korean food is very delicious.", "ko": "한국 음식은 매우 맛있어요."},
+      {"en": "She likes spicy food.", "ko": "그녀는 매운 음식을 좋아해요."},
+      {"en": "We need food and water to live.", "ko": "우리는 살기 위해 음식과 물이 필요해요."}
+    ]
+  },
+  {
+    "id": 10, "word": "home", "meaningKo": "집", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "I go home after school.", "ko": "나는 학교가 끝나면 집에 가요."},
+      {"en": "My home is warm and cozy.", "ko": "우리 집은 따뜻하고 아늑해요."},
+      {"en": "There is no place like home.", "ko": "집만큼 좋은 곳은 없어요."}
+    ]
+  },
+  {
+    "id": 11, "word": "room", "meaningKo": "방", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "My room is a little messy.", "ko": "내 방은 조금 지저분해요."},
+      {"en": "I study in my room.", "ko": "나는 내 방에서 공부해요."},
+      {"en": "Please clean your room.", "ko": "방을 청소하세요."}
+    ]
+  },
+  {
+    "id": 12, "word": "table", "meaningKo": "테이블", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "We eat at the table.", "ko": "우리는 테이블에서 식사해요."},
+      {"en": "Put your phone on the table.", "ko": "핸드폰을 테이블 위에 놓아요."},
+      {"en": "There is a vase on the table.", "ko": "테이블 위에 꽃병이 있어요."}
+    ]
+  },
+  {
+    "id": 13, "word": "chair", "meaningKo": "의자", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "Please sit on the chair.", "ko": "의자에 앉으세요."},
+      {"en": "There are six chairs in the room.", "ko": "방에 의자가 6개 있어요."},
+      {"en": "That chair looks very comfortable.", "ko": "저 의자는 매우 편안해 보여요."}
+    ]
+  },
+  {
+    "id": 14, "word": "bed", "meaningKo": "침대", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "I go to bed at ten.", "ko": "나는 10시에 잠자리에 들어요."},
+      {"en": "My bed is very soft.", "ko": "내 침대는 매우 푹신해요."},
+      {"en": "Don't jump on the bed!", "ko": "침대 위에서 뛰지 마세요!"}
+    ]
+  },
+  {
+    "id": 15, "word": "pencil", "meaningKo": "연필", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "I write with a pencil.", "ko": "나는 연필로 글을 써요."},
+      {"en": "Can I borrow your pencil?", "ko": "연필 빌려줄 수 있어요?"},
+      {"en": "She sharpened her pencil.", "ko": "그녀는 연필을 깎았어요."}
+    ]
+  },
+  {
+    "id": 16, "word": "bag", "meaningKo": "가방", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "My school bag is heavy today.", "ko": "오늘 내 책가방이 무거워요."},
+      {"en": "She has a pink bag.", "ko": "그녀는 분홍색 가방을 갖고 있어요."},
+      {"en": "Don't forget your bag!", "ko": "가방 잊지 마세요!"}
+    ]
+  },
+  {
+    "id": 17, "word": "music", "meaningKo": "음악", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "I listen to music every day.", "ko": "나는 매일 음악을 들어요."},
+      {"en": "She plays music very well.", "ko": "그녀는 음악을 아주 잘해요."},
+      {"en": "Music makes me happy.", "ko": "음악은 나를 행복하게 해요."}
+    ]
+  },
+  {
+    "id": 18, "word": "game", "meaningKo": "게임", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "Let's play a game!", "ko": "게임 하나 하자!"},
+      {"en": "I play games on my phone.", "ko": "나는 폰으로 게임을 해요."},
+      {"en": "Our team won the game.", "ko": "우리 팀이 게임에서 이겼어요."}
+    ]
+  },
+  {
+    "id": 19, "word": "sport", "meaningKo": "스포츠", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "My favorite sport is soccer.", "ko": "내가 가장 좋아하는 스포츠는 축구예요."},
+      {"en": "Playing sports is good for health.", "ko": "스포츠를 하는 것은 건강에 좋아요."},
+      {"en": "She is great at sports.", "ko": "그녀는 스포츠를 정말 잘해요."}
+    ]
+  },
+  {
+    "id": 20, "word": "park", "meaningKo": "공원", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "I walk in the park on weekends.", "ko": "나는 주말에 공원에서 산책해요."},
+      {"en": "There are many trees in the park.", "ko": "공원에 나무가 많아요."},
+      {"en": "Children are playing in the park.", "ko": "아이들이 공원에서 놀고 있어요."}
+    ]
+  },
+  {
+    "id": 21, "word": "city", "meaningKo": "도시", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "Seoul is a big and busy city.", "ko": "서울은 크고 바쁜 도시예요."},
+      {"en": "I live in a small city.", "ko": "나는 작은 도시에 살아요."},
+      {"en": "The city looks beautiful at night.", "ko": "도시는 밤에 아름다워요."}
+    ]
+  },
+  {
+    "id": 22, "word": "country", "meaningKo": "나라", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "Korea is my country.", "ko": "한국은 내 나라예요."},
+      {"en": "I want to visit many countries.", "ko": "나는 많은 나라를 방문하고 싶어요."},
+      {"en": "Japan is a small country.", "ko": "일본은 작은 나라예요."}
+    ]
+  },
+  {
+    "id": 23, "word": "sun", "meaningKo": "태양", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "The sun is very bright today.", "ko": "오늘 태양이 매우 밝아요."},
+      {"en": "Plants need sunlight to grow.", "ko": "식물은 자라기 위해 햇빛이 필요해요."},
+      {"en": "Don't look directly at the sun.", "ko": "태양을 직접 보지 마세요."}
+    ]
+  },
+  {
+    "id": 24, "word": "moon", "meaningKo": "달", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "The moon is full tonight.", "ko": "오늘 밤 달이 꽉 차 있어요."},
+      {"en": "I can see the moon from my window.", "ko": "창문에서 달이 보여요."},
+      {"en": "The moon shines at night.", "ko": "달은 밤에 빛나요."}
+    ]
+  },
+  {
+    "id": 25, "word": "star", "meaningKo": "별", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "I can see many stars tonight.", "ko": "오늘 밤 별이 많이 보여요."},
+      {"en": "The star is very far away.", "ko": "별은 매우 멀리 있어요."},
+      {"en": "She wishes upon a star.", "ko": "그녀는 별에 소원을 빌어요."}
+    ]
+  },
+  {
+    "id": 26, "word": "sky", "meaningKo": "하늘", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "The sky is blue and clear.", "ko": "하늘이 파랗고 맑아요."},
+      {"en": "Look at the sky!", "ko": "하늘을 봐요!"},
+      {"en": "Birds fly in the sky.", "ko": "새들이 하늘을 날아요."}
+    ]
+  },
+  {
+    "id": 27, "word": "tree", "meaningKo": "나무", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "There is a big tree in the yard.", "ko": "마당에 큰 나무가 있어요."},
+      {"en": "The tree has many colorful leaves.", "ko": "그 나무에는 알록달록한 잎이 많아요."},
+      {"en": "We sat under the tree.", "ko": "우리는 나무 아래에 앉았어요."}
+    ]
+  },
+  {
+    "id": 28, "word": "flower", "meaningKo": "꽃", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "She gave me a beautiful flower.", "ko": "그녀가 나에게 아름다운 꽃을 줬어요."},
+      {"en": "The flowers are blooming in spring.", "ko": "봄에 꽃들이 피고 있어요."},
+      {"en": "My favorite flower is the rose.", "ko": "내가 가장 좋아하는 꽃은 장미예요."}
+    ]
+  },
+  {
+    "id": 29, "word": "rain", "meaningKo": "비", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "It is raining outside.", "ko": "밖에 비가 오고 있어요."},
+      {"en": "Don't forget your umbrella. It may rain.", "ko": "우산 잊지 말아요. 비가 올 수도 있어요."},
+      {"en": "I love the smell after rain.", "ko": "나는 비가 온 후의 향기를 좋아해요."}
+    ]
+  },
+  {
+    "id": 30, "word": "snow", "meaningKo": "눈", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "It is snowing outside!", "ko": "밖에 눈이 오고 있어요!"},
+      {"en": "The snow is very white and soft.", "ko": "눈은 매우 희고 부드러워요."},
+      {"en": "I love playing in the snow.", "ko": "나는 눈 속에서 노는 것을 좋아해요."}
+    ]
+  },
+  {
+    "id": 31, "word": "time", "meaningKo": "시간", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "What time is it now?", "ko": "지금 몇 시예요?"},
+      {"en": "I don't have much time.", "ko": "나는 시간이 많지 않아요."},
+      {"en": "Time flies when you are having fun.", "ko": "즐거울 때는 시간이 빨리 가요."}
+    ]
+  },
+  {
+    "id": 32, "word": "morning", "meaningKo": "아침", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "Good morning, everyone!", "ko": "좋은 아침이에요, 모두!"},
+      {"en": "I exercise every morning.", "ko": "나는 매일 아침 운동해요."},
+      {"en": "The morning air is fresh and clean.", "ko": "아침 공기는 신선하고 깨끗해요."}
+    ]
+  },
+  {
+    "id": 33, "word": "evening", "meaningKo": "저녁", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "We have dinner in the evening.", "ko": "우리는 저녁에 저녁 식사를 해요."},
+      {"en": "The evening sky is beautiful.", "ko": "저녁 하늘이 아름다워요."},
+      {"en": "I take a walk every evening.", "ko": "나는 매일 저녁 산책을 해요."}
+    ]
+  },
+  {
+    "id": 34, "word": "day", "meaningKo": "날", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "Today is a beautiful day.", "ko": "오늘은 아름다운 날이에요."},
+      {"en": "Have a great day!", "ko": "좋은 하루 보내세요!"},
+      {"en": "I study English every day.", "ko": "나는 매일 영어를 공부해요."}
+    ]
+  },
+  {
+    "id": 35, "word": "week", "meaningKo": "주", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "There are seven days in a week.", "ko": "일주일은 7일이에요."},
+      {"en": "I practice piano twice a week.", "ko": "나는 일주일에 두 번 피아노를 연습해요."},
+      {"en": "See you next week!", "ko": "다음 주에 만나요!"}
+    ]
+  },
+  {
+    "id": 36, "word": "year", "meaningKo": "년", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "Happy New Year!", "ko": "새해 복 많이 받아요!"},
+      {"en": "I am thirteen years old.", "ko": "나는 열세 살이에요."},
+      {"en": "There are twelve months in a year.", "ko": "1년은 12개월이에요."}
+    ]
+  },
+  {
+    "id": 37, "word": "mother", "meaningKo": "어머니", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "My mother is a great cook.", "ko": "우리 어머니는 요리를 정말 잘해요."},
+      {"en": "I love my mother very much.", "ko": "나는 어머니를 정말 사랑해요."},
+      {"en": "My mother wakes me up every morning.", "ko": "어머니는 매일 아침 나를 깨워줘요."}
+    ]
+  },
+  {
+    "id": 38, "word": "father", "meaningKo": "아버지", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "My father goes to work early.", "ko": "우리 아버지는 일찍 출근해요."},
+      {"en": "I play soccer with my father.", "ko": "나는 아버지와 함께 축구를 해요."},
+      {"en": "My father is very tall.", "ko": "우리 아버지는 키가 매우 커요."}
+    ]
+  },
+  {
+    "id": 39, "word": "teacher", "meaningKo": "선생님", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "My English teacher is very kind.", "ko": "우리 영어 선생님은 매우 친절해요."},
+      {"en": "The teacher explained the lesson clearly.", "ko": "선생님이 수업을 명확하게 설명해줬어요."},
+      {"en": "I want to become a teacher someday.", "ko": "나는 언젠가 선생님이 되고 싶어요."}
+    ]
+  },
+  {
+    "id": 40, "word": "student", "meaningKo": "학생", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "I am a middle school student.", "ko": "나는 중학생이에요."},
+      {"en": "All students must wear a uniform.", "ko": "모든 학생은 교복을 입어야 해요."},
+      {"en": "She is a very hard-working student.", "ko": "그녀는 매우 성실한 학생이에요."}
+    ]
+  },
+  {
+    "id": 41, "word": "hand", "meaningKo": "손", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "Please wash your hands before eating.", "ko": "식사 전에 손을 씻으세요."},
+      {"en": "She raised her hand in class.", "ko": "그녀는 수업 시간에 손을 들었어요."},
+      {"en": "Hold my hand.", "ko": "내 손을 잡아요."}
+    ]
+  },
+  {
+    "id": 42, "word": "eye", "meaningKo": "눈", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "She has beautiful brown eyes.", "ko": "그녀는 아름다운 갈색 눈을 가지고 있어요."},
+      {"en": "Close your eyes and relax.", "ko": "눈을 감고 쉬어요."},
+      {"en": "My eyes hurt from looking at the screen.", "ko": "화면을 오래 봤더니 눈이 아파요."}
+    ]
+  },
+  {
+    "id": 43, "word": "heart", "meaningKo": "마음", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "She has a kind heart.", "ko": "그녀는 따뜻한 마음을 가졌어요."},
+      {"en": "Follow your heart.", "ko": "마음이 가는 대로 해요."},
+      {"en": "My heart is full of joy.", "ko": "내 마음이 기쁨으로 가득해요."}
+    ]
+  },
+  {
+    "id": 44, "word": "voice", "meaningKo": "목소리", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "She has a lovely voice.", "ko": "그녀는 아름다운 목소리를 가지고 있어요."},
+      {"en": "Please lower your voice in the library.", "ko": "도서관에서는 목소리를 낮추세요."},
+      {"en": "I can hear your voice clearly.", "ko": "당신의 목소리가 또렷하게 들려요."}
+    ]
+  },
+  {
+    "id": 45, "word": "story", "meaningKo": "이야기", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "Tell me a story!", "ko": "이야기 해줘요!"},
+      {"en": "This is a very touching story.", "ko": "이것은 매우 감동적인 이야기예요."},
+      {"en": "I love reading storybooks.", "ko": "나는 이야기책 읽는 것을 좋아해요."}
+    ]
+  },
+  {
+    "id": 46, "word": "dream", "meaningKo": "꿈", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "I had a strange dream last night.", "ko": "어젯밤에 이상한 꿈을 꿨어요."},
+      {"en": "My dream is to travel the world.", "ko": "내 꿈은 세계를 여행하는 것이에요."},
+      {"en": "Never give up on your dreams.", "ko": "꿈을 절대 포기하지 마세요."}
+    ]
+  },
+  {
+    "id": 47, "word": "class", "meaningKo": "수업", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "English class is my favorite.", "ko": "영어 수업이 제일 좋아요."},
+      {"en": "The class starts at nine.", "ko": "수업은 9시에 시작해요."},
+      {"en": "Don't be late for class.", "ko": "수업에 늦지 마세요."}
+    ]
+  },
+  {
+    "id": 48, "word": "life", "meaningKo": "삶", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "Life is beautiful.", "ko": "삶은 아름다워요."},
+      {"en": "School life is full of good memories.", "ko": "학교 생활은 좋은 추억으로 가득해요."},
+      {"en": "I enjoy every moment of my life.", "ko": "나는 삶의 모든 순간을 즐겨요."}
+    ]
+  },
+  {
+    "id": 49, "word": "window", "meaningKo": "창문", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "Please open the window.", "ko": "창문을 열어주세요."},
+      {"en": "I look out the window when I'm bored.", "ko": "나는 심심할 때 창문 밖을 봐요."},
+      {"en": "The window is dirty.", "ko": "창문이 더러워요."}
+    ]
+  },
+  {
+    "id": 50, "word": "door", "meaningKo": "문", "partOfSpeech": "noun",
+    "examples": [
+      {"en": "Please close the door.", "ko": "문을 닫아주세요."},
+      {"en": "Someone is knocking on the door.", "ko": "누가 문을 두드리고 있어요."},
+      {"en": "I left my key by the door.", "ko": "나는 문 옆에 열쇠를 놔뒀어요."}
+    ]
+  },
+  {
+    "id": 51, "word": "eat", "meaningKo": "먹다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "I eat breakfast at seven.", "ko": "나는 7시에 아침을 먹어요."},
+      {"en": "She eats slowly.", "ko": "그녀는 천천히 먹어요."},
+      {"en": "Don't eat too fast.", "ko": "너무 빨리 먹지 마세요."}
+    ]
+  },
+  {
+    "id": 52, "word": "drink", "meaningKo": "마시다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "I drink milk every morning.", "ko": "나는 매일 아침 우유를 마셔요."},
+      {"en": "Can I drink this juice?", "ko": "이 주스를 마셔도 될까요?"},
+      {"en": "Drink more water every day.", "ko": "매일 물을 더 많이 마셔요."}
+    ]
+  },
+  {
+    "id": 53, "word": "run", "meaningKo": "달리다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "I run every morning to stay healthy.", "ko": "나는 건강을 유지하기 위해 매일 아침 달려요."},
+      {"en": "Run or you'll be late!", "ko": "달려요, 안 그러면 늦어요!"},
+      {"en": "He can run very fast.", "ko": "그는 매우 빨리 달릴 수 있어요."}
+    ]
+  },
+  {
+    "id": 54, "word": "walk", "meaningKo": "걷다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "I walk to school every day.", "ko": "나는 매일 걸어서 학교에 가요."},
+      {"en": "Let's take a walk in the park.", "ko": "공원에서 산책하자요."},
+      {"en": "She walks her dog every evening.", "ko": "그녀는 매일 저녁 강아지를 산책시켜요."}
+    ]
+  },
+  {
+    "id": 55, "word": "sleep", "meaningKo": "자다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "I sleep for eight hours every night.", "ko": "나는 매일 밤 8시간 잠을 자요."},
+      {"en": "Go to sleep early tonight.", "ko": "오늘 밤 일찍 자요."},
+      {"en": "The baby is sleeping.", "ko": "아기가 자고 있어요."}
+    ]
+  },
+  {
+    "id": 56, "word": "sit", "meaningKo": "앉다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "Please sit down.", "ko": "앉으세요."},
+      {"en": "I sit next to my best friend.", "ko": "나는 가장 친한 친구 옆에 앉아요."},
+      {"en": "She sat quietly in the library.", "ko": "그녀는 도서관에서 조용히 앉아 있었어요."}
+    ]
+  },
+  {
+    "id": 57, "word": "stand", "meaningKo": "서다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "Please stand up.", "ko": "일어서세요."},
+      {"en": "I stand at the bus stop every morning.", "ko": "나는 매일 아침 버스 정류장에 서 있어요."},
+      {"en": "She stood in front of the class.", "ko": "그녀는 반 앞에 섰어요."}
+    ]
+  },
+  {
+    "id": 58, "word": "jump", "meaningKo": "점프하다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "The rabbit can jump very high.", "ko": "토끼는 아주 높이 뛸 수 있어요."},
+      {"en": "Jump rope is good exercise.", "ko": "줄넘기는 좋은 운동이에요."},
+      {"en": "She jumped with joy.", "ko": "그녀는 기쁨에 뛰어올랐어요."}
+    ]
+  },
+  {
+    "id": 59, "word": "swim", "meaningKo": "수영하다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "I swim at the pool every Saturday.", "ko": "나는 매주 토요일 수영장에서 수영해요."},
+      {"en": "Can you swim?", "ko": "수영할 수 있어요?"},
+      {"en": "Fish swim in the ocean.", "ko": "물고기들이 바다에서 헤엄쳐요."}
+    ]
+  },
+  {
+    "id": 60, "word": "read", "meaningKo": "읽다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "I read a book every night.", "ko": "나는 매일 밤 책을 읽어요."},
+      {"en": "Read this sentence carefully.", "ko": "이 문장을 주의 깊게 읽어요."},
+      {"en": "She reads faster than me.", "ko": "그녀는 나보다 빨리 읽어요."}
+    ]
+  },
+  {
+    "id": 61, "word": "write", "meaningKo": "쓰다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "Write your name at the top.", "ko": "맨 위에 이름을 쓰세요."},
+      {"en": "I write in my diary every day.", "ko": "나는 매일 일기를 써요."},
+      {"en": "She writes beautiful poems.", "ko": "그녀는 아름다운 시를 써요."}
+    ]
+  },
+  {
+    "id": 62, "word": "listen", "meaningKo": "듣다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "Listen carefully to the teacher.", "ko": "선생님 말씀을 주의 깊게 들어요."},
+      {"en": "I listen to music on the bus.", "ko": "나는 버스에서 음악을 들어요."},
+      {"en": "He listens to his parents.", "ko": "그는 부모님 말씀을 잘 들어요."}
+    ]
+  },
+  {
+    "id": 63, "word": "speak", "meaningKo": "말하다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "Can you speak English?", "ko": "영어로 말할 수 있어요?"},
+      {"en": "Please speak slowly.", "ko": "천천히 말해주세요."},
+      {"en": "She speaks three languages.", "ko": "그녀는 세 가지 언어를 말할 수 있어요."}
+    ]
+  },
+  {
+    "id": 64, "word": "ask", "meaningKo": "묻다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "Don't be afraid to ask questions.", "ko": "질문하는 것을 무서워하지 마세요."},
+      {"en": "I want to ask you something.", "ko": "당신에게 뭔가 묻고 싶어요."},
+      {"en": "She asked me for help.", "ko": "그녀가 나에게 도움을 요청했어요."}
+    ]
+  },
+  {
+    "id": 65, "word": "answer", "meaningKo": "대답하다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "Please answer the question.", "ko": "질문에 대답해주세요."},
+      {"en": "He answered correctly.", "ko": "그는 정확하게 대답했어요."},
+      {"en": "I don't know how to answer.", "ko": "어떻게 대답해야 할지 모르겠어요."}
+    ]
+  },
+  {
+    "id": 66, "word": "think", "meaningKo": "생각하다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "Think before you speak.", "ko": "말하기 전에 생각하세요."},
+      {"en": "I think this answer is correct.", "ko": "이 답이 맞다고 생각해요."},
+      {"en": "What do you think?", "ko": "어떻게 생각해요?"}
+    ]
+  },
+  {
+    "id": 67, "word": "know", "meaningKo": "알다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "Do you know the answer?", "ko": "답을 알아요?"},
+      {"en": "I know her very well.", "ko": "나는 그녀를 매우 잘 알아요."},
+      {"en": "You never know!", "ko": "절대 모르는 거예요!"}
+    ]
+  },
+  {
+    "id": 68, "word": "learn", "meaningKo": "배우다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "I want to learn more English words.", "ko": "나는 영어 단어를 더 배우고 싶어요."},
+      {"en": "Learning a new skill takes time.", "ko": "새로운 기술을 배우는 데는 시간이 걸려요."},
+      {"en": "We learn from our mistakes.", "ko": "우리는 실수에서 배워요."}
+    ]
+  },
+  {
+    "id": 69, "word": "remember", "meaningKo": "기억하다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "I can't remember her name.", "ko": "나는 그녀의 이름이 기억나지 않아요."},
+      {"en": "Remember to do your homework.", "ko": "숙제하는 것 잊지 마세요."},
+      {"en": "Do you remember our first meeting?", "ko": "우리 처음 만난 것 기억해요?"}
+    ]
+  },
+  {
+    "id": 70, "word": "forget", "meaningKo": "잊다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "I always forget my umbrella.", "ko": "나는 항상 우산을 잊어버려요."},
+      {"en": "Don't forget to call me.", "ko": "나에게 전화하는 것 잊지 마세요."},
+      {"en": "She forgot her homework at home.", "ko": "그녀는 숙제를 집에 두고 왔어요."}
+    ]
+  },
+  {
+    "id": 71, "word": "go", "meaningKo": "가다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "Let's go to the park!", "ko": "공원에 가요!"},
+      {"en": "I go to bed at ten.", "ko": "나는 10시에 자러 가요."},
+      {"en": "She goes to school by bus.", "ko": "그녀는 버스를 타고 학교에 가요."}
+    ]
+  },
+  {
+    "id": 72, "word": "come", "meaningKo": "오다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "Come here, please.", "ko": "이리 와요."},
+      {"en": "Can you come to my birthday party?", "ko": "내 생일 파티에 올 수 있어요?"},
+      {"en": "Spring comes after winter.", "ko": "봄은 겨울이 지나면 와요."}
+    ]
+  },
+  {
+    "id": 73, "word": "give", "meaningKo": "주다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "Please give me a chance.", "ko": "나에게 기회를 주세요."},
+      {"en": "She gave me a gift.", "ko": "그녀가 나에게 선물을 줬어요."},
+      {"en": "Giving is better than receiving.", "ko": "받는 것보다 주는 것이 더 좋아요."}
+    ]
+  },
+  {
+    "id": 74, "word": "help", "meaningKo": "돕다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "Can you help me with this?", "ko": "이것 좀 도와줄 수 있어요?"},
+      {"en": "I always help my mother.", "ko": "나는 항상 어머니를 도와요."},
+      {"en": "Friends help each other.", "ko": "친구들은 서로 도와요."}
+    ]
+  },
+  {
+    "id": 75, "word": "make", "meaningKo": "만들다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "I want to make a cake for you.", "ko": "너를 위해 케이크를 만들고 싶어요."},
+      {"en": "She made a beautiful card.", "ko": "그녀는 아름다운 카드를 만들었어요."},
+      {"en": "Let's make new friends.", "ko": "새로운 친구를 사귀어요."}
+    ]
+  },
+  {
+    "id": 76, "word": "like", "meaningKo": "좋아하다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "I like listening to K-pop.", "ko": "나는 K-pop 듣는 것을 좋아해요."},
+      {"en": "Do you like this song?", "ko": "이 노래 좋아요?"},
+      {"en": "She likes reading and drawing.", "ko": "그녀는 독서와 그림 그리기를 좋아해요."}
+    ]
+  },
+  {
+    "id": 77, "word": "love", "meaningKo": "사랑하다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "I love my family.", "ko": "나는 가족을 사랑해요."},
+      {"en": "She loves animals.", "ko": "그녀는 동물을 사랑해요."},
+      {"en": "I love spending time with you.", "ko": "나는 너와 시간 보내는 것을 사랑해요."}
+    ]
+  },
+  {
+    "id": 78, "word": "want", "meaningKo": "원하다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "I want to travel to Japan.", "ko": "나는 일본에 여행가고 싶어요."},
+      {"en": "What do you want for your birthday?", "ko": "생일에 뭘 원해요?"},
+      {"en": "She wants to be a doctor.", "ko": "그녀는 의사가 되고 싶어요."}
+    ]
+  },
+  {
+    "id": 79, "word": "need", "meaningKo": "필요하다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "I need more practice.", "ko": "나는 더 많은 연습이 필요해요."},
+      {"en": "We need to talk.", "ko": "우리 이야기가 필요해요."},
+      {"en": "Do you need any help?", "ko": "도움이 필요해요?"}
+    ]
+  },
+  {
+    "id": 80, "word": "use", "meaningKo": "사용하다", "partOfSpeech": "verb",
+    "examples": [
+      {"en": "Can I use your pencil?", "ko": "연필 사용해도 될까요?"},
+      {"en": "Use this word in a sentence.", "ko": "이 단어를 문장에서 사용해보세요."},
+      {"en": "She uses her phone too much.", "ko": "그녀는 핸드폰을 너무 많이 사용해요."}
+    ]
+  },
+  {
+    "id": 81, "word": "happy", "meaningKo": "행복한", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "I am very happy today.", "ko": "나는 오늘 매우 행복해요."},
+      {"en": "She looks happy when she sings.", "ko": "그녀는 노래할 때 행복해 보여요."},
+      {"en": "A happy smile makes everyone feel good.", "ko": "행복한 미소는 모두를 기분 좋게 해요."}
+    ]
+  },
+  {
+    "id": 82, "word": "sad", "meaningKo": "슬픈", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "I feel sad when I miss my friends.", "ko": "친구들이 보고 싶을 때 슬퍼요."},
+      {"en": "This movie is very sad.", "ko": "이 영화는 매우 슬퍼요."},
+      {"en": "Don't be sad. Things will get better.", "ko": "슬퍼하지 마세요. 곧 좋아질 거예요."}
+    ]
+  },
+  {
+    "id": 83, "word": "tired", "meaningKo": "피곤한", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "I am tired after school.", "ko": "학교가 끝나면 피곤해요."},
+      {"en": "She looks very tired today.", "ko": "그녀는 오늘 매우 피곤해 보여요."},
+      {"en": "I'm too tired to study.", "ko": "나는 너무 피곤해서 공부할 수가 없어요."}
+    ]
+  },
+  {
+    "id": 84, "word": "hungry", "meaningKo": "배고픈", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "I am so hungry. Let's eat!", "ko": "배가 너무 고파요. 밥 먹자요!"},
+      {"en": "Don't study on an empty stomach.", "ko": "배고픈 상태로 공부하지 마세요."},
+      {"en": "The dog looks hungry.", "ko": "강아지가 배고파 보여요."}
+    ]
+  },
+  {
+    "id": 85, "word": "beautiful", "meaningKo": "아름다운", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "The sunset is so beautiful.", "ko": "석양이 정말 아름다워요."},
+      {"en": "She has a beautiful smile.", "ko": "그녀는 아름다운 미소를 가지고 있어요."},
+      {"en": "Spring is the most beautiful season.", "ko": "봄은 가장 아름다운 계절이에요."}
+    ]
+  },
+  {
+    "id": 86, "word": "clean", "meaningKo": "깨끗한", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "Please keep your desk clean.", "ko": "책상을 깨끗하게 유지하세요."},
+      {"en": "The air in the mountains is very clean.", "ko": "산의 공기는 매우 깨끗해요."},
+      {"en": "Wash your hands to stay clean.", "ko": "깨끗하게 지내려면 손을 씻으세요."}
+    ]
+  },
+  {
+    "id": 87, "word": "fast", "meaningKo": "빠른", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "He is a very fast runner.", "ko": "그는 매우 빠른 달리기 선수예요."},
+      {"en": "The train is fast.", "ko": "기차는 빨라요."},
+      {"en": "Time passes fast when you are busy.", "ko": "바쁠 때는 시간이 빨리 지나가요."}
+    ]
+  },
+  {
+    "id": 88, "word": "slow", "meaningKo": "느린", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "The turtle moves very slow.", "ko": "거북이는 매우 느리게 움직여요."},
+      {"en": "Please drive slow in a school zone.", "ko": "학교 앞에서는 천천히 운전하세요."},
+      {"en": "I am a slow eater.", "ko": "나는 천천히 먹는 편이에요."}
+    ]
+  },
+  {
+    "id": 89, "word": "easy", "meaningKo": "쉬운", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "This question is very easy.", "ko": "이 문제는 매우 쉬워요."},
+      {"en": "English is not easy, but fun.", "ko": "영어는 쉽지 않지만 재미있어요."},
+      {"en": "Take it easy!", "ko": "천천히 해요!"}
+    ]
+  },
+  {
+    "id": 90, "word": "difficult", "meaningKo": "어려운", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "Math is difficult for me.", "ko": "수학이 나에게 어려워요."},
+      {"en": "This test was very difficult.", "ko": "이 시험은 매우 어려웠어요."},
+      {"en": "Nothing is too difficult if you try.", "ko": "노력하면 너무 어려운 것은 없어요."}
+    ]
+  },
+  {
+    "id": 91, "word": "big", "meaningKo": "큰", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "Seoul is a very big city.", "ko": "서울은 매우 큰 도시예요."},
+      {"en": "She has a big dream.", "ko": "그녀는 큰 꿈을 가지고 있어요."},
+      {"en": "A big smile makes me happy.", "ko": "큰 미소는 나를 행복하게 해요."}
+    ]
+  },
+  {
+    "id": 92, "word": "small", "meaningKo": "작은", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "This puppy is very small.", "ko": "이 강아지는 매우 작아요."},
+      {"en": "I live in a small but cozy room.", "ko": "나는 작지만 아늑한 방에 살아요."},
+      {"en": "Small steps lead to big results.", "ko": "작은 발걸음이 큰 결과를 만들어요."}
+    ]
+  },
+  {
+    "id": 93, "word": "tall", "meaningKo": "키가 큰", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "My brother is very tall.", "ko": "내 형/오빠는 키가 매우 커요."},
+      {"en": "That building is very tall.", "ko": "저 건물은 아주 높아요."},
+      {"en": "She is the tallest in her class.", "ko": "그녀는 반에서 가장 키가 커요."}
+    ]
+  },
+  {
+    "id": 94, "word": "short", "meaningKo": "짧은", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "This skirt is too short.", "ko": "이 치마는 너무 짧아요."},
+      {"en": "Life is short. Enjoy it!", "ko": "삶은 짧아요. 즐겨요!"},
+      {"en": "She has short hair.", "ko": "그녀는 머리카락이 짧아요."}
+    ]
+  },
+  {
+    "id": 95, "word": "new", "meaningKo": "새로운", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "I got a new phone!", "ko": "새 핸드폰을 샀어요!"},
+      {"en": "Let's try something new today.", "ko": "오늘 새로운 것을 시험해봐요."},
+      {"en": "She is a new student in our class.", "ko": "그녀는 우리 반의 새 학생이에요."}
+    ]
+  },
+  {
+    "id": 96, "word": "old", "meaningKo": "오래된", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "This is a very old building.", "ko": "이것은 매우 오래된 건물이에요."},
+      {"en": "I found an old photo of us.", "ko": "우리의 오래된 사진을 발견했어요."},
+      {"en": "Old habits are hard to change.", "ko": "오래된 습관은 바꾸기 어려워요."}
+    ]
+  },
+  {
+    "id": 97, "word": "good", "meaningKo": "좋은", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "Have a good day!", "ko": "좋은 하루 보내요!"},
+      {"en": "She is a good student.", "ko": "그녀는 좋은 학생이에요."},
+      {"en": "This soup tastes really good.", "ko": "이 국은 정말 맛있어요."}
+    ]
+  },
+  {
+    "id": 98, "word": "hot", "meaningKo": "뜨거운", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "Be careful. The soup is hot.", "ko": "조심해요. 국이 뜨거워요."},
+      {"en": "Summer in Korea is very hot.", "ko": "한국의 여름은 매우 더워요."},
+      {"en": "I like drinking hot tea.", "ko": "나는 뜨거운 차 마시는 것을 좋아해요."}
+    ]
+  },
+  {
+    "id": 99, "word": "cold", "meaningKo": "차가운", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "This water is cold.", "ko": "이 물은 차가워요."},
+      {"en": "Winter is very cold in Korea.", "ko": "한국의 겨울은 매우 추워요."},
+      {"en": "I want cold ice cream.", "ko": "나는 차가운 아이스크림을 먹고 싶어요."}
+    ]
+  },
+  {
+    "id": 100, "word": "warm", "meaningKo": "따뜻한", "partOfSpeech": "adjective",
+    "examples": [
+      {"en": "This blanket is so warm.", "ko": "이 담요는 너무 따뜻해요."},
+      {"en": "Spring days are warm and nice.", "ko": "봄날은 따뜻하고 좋아요."},
+      {"en": "She has a warm heart.", "ko": "그녀는 따뜻한 마음을 가졌어요."}
+    ]
+  }
+]
