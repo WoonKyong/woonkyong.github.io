@@ -196,6 +196,25 @@
     .day-toggle { font-size: 16px; color: var(--text-sub); transition: transform 0.2s; }
     .day-card.open .day-toggle { transform: rotate(180deg); }
 
+    /* ===== WEATHER BADGE ===== */
+    .weather-badge {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 12px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .weather-badge .w-icon { font-size: 15px; }
+    .weather-badge .w-temp { font-weight: 600; color: var(--text); }
+    .weather-badge .w-rain { color: #60a5fa; font-size: 11px; }
+    .weather-badge.loading { opacity: 0.4; }
+    .weather-badge.error { display: none; }
+
     .day-body { display: none; }
     .day-card.open .day-body { display: block; }
 
@@ -256,6 +275,186 @@
       line-height: 1.7;
     }
     .tip-body strong { color: var(--text); }
+
+    /* ===== MAP LINK ===== */
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      font-size: 11px;
+      color: var(--accent);
+      text-decoration: none;
+      background: var(--accent-dim);
+      border-radius: 6px;
+      padding: 1px 7px;
+      margin-left: 8px;
+      vertical-align: middle;
+      white-space: nowrap;
+      transition: opacity 0.15s;
+    }
+    .map-link:hover { opacity: 0.7; }
+
+    /* ===== EXCHANGE RATE ===== */
+    .rate-widget {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .rate-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: rgba(249,115,22,0.07);
+      border-bottom: 1px solid var(--border);
+    }
+    .rate-pair { font-size: 16px; font-weight: 800; }
+    .rate-pair em { color: var(--accent); font-style: normal; }
+    .rate-updated { font-size: 11px; color: var(--text-sub); }
+    .rate-body { padding: 12px 16px; }
+    .rate-table { width: 100%; border-collapse: collapse; }
+    .rate-table tr { border-bottom: 1px solid var(--border); }
+    .rate-table tr:last-child { border-bottom: none; }
+    .rate-table td { padding: 9px 4px; font-size: 13px; }
+    .rate-table td:first-child { color: var(--text-sub); }
+    .rate-table td:last-child { font-weight: 700; text-align: right; color: var(--accent); }
+    .rate-note { font-size: 11px; color: var(--text-sub); margin-top: 8px; text-align: right; }
+    .rate-loading { text-align: center; padding: 18px; color: var(--text-sub); font-size: 13px; }
+
+    /* ===== TRANSPORT ===== */
+    .transport-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .transport-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 10px;
+      text-align: center;
+    }
+    .transport-icon { font-size: 22px; margin-bottom: 6px; }
+    .transport-name { font-size: 12px; font-weight: 700; margin-bottom: 4px; }
+    .transport-fare { font-size: 17px; font-weight: 800; color: var(--accent); }
+    .transport-sub { font-size: 11px; color: var(--text-sub); margin-top: 3px; line-height: 1.4; }
+    .info-box {
+      background: rgba(249,115,22,0.07);
+      border: 1px solid rgba(249,115,22,0.2);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 12px;
+      color: var(--text-sub);
+      line-height: 1.8;
+    }
+    .info-box strong { color: var(--text); }
+
+    /* ===== APP GRID ===== */
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 10px;
+    }
+    .app-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .app-icon { font-size: 26px; }
+    .app-name { font-size: 13px; font-weight: 700; }
+    .app-desc { font-size: 11px; color: var(--text-sub); line-height: 1.4; }
+    .app-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 10px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      align-self: flex-start;
+      margin-top: 2px;
+    }
+
+    /* ===== ONSEN GUIDE ===== */
+    .onsen-steps {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .onsen-step {
+      display: flex;
+      gap: 12px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .onsen-step:last-child { border-bottom: none; }
+    .step-num {
+      min-width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-text { font-size: 13px; line-height: 1.6; color: var(--text-sub); }
+    .step-text strong { color: var(--text); }
+    .onsen-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .onsen-place {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .onsen-place-name { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+    .onsen-place-row { font-size: 12px; color: var(--text-sub); margin-bottom: 4px; line-height: 1.5; }
+    .onsen-place-row strong { color: var(--text); }
+
+    /* ===== SOUVENIRS ===== */
+    .souvenir-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+    .souvenir-item:last-child { margin-bottom: 0; }
+    .souvenir-emoji { font-size: 26px; flex-shrink: 0; }
+    .souvenir-info { flex: 1; }
+    .souvenir-name { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+    .souvenir-desc { font-size: 12px; color: var(--text-sub); line-height: 1.5; }
+    .souvenir-meta { display: flex; gap: 6px; margin-top: 7px; flex-wrap: wrap; }
+    .souvenir-price {
+      font-size: 11px; font-weight: 600; color: var(--accent);
+      background: var(--accent-dim); padding: 2px 8px; border-radius: 10px;
+    }
+    .souvenir-where {
+      font-size: 11px; color: var(--text-sub);
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      padding: 2px 8px; border-radius: 10px;
+    }
 
     /* ===== FOOTER ===== */
     footer {
@@ -378,6 +577,7 @@
       <div class="day-header" onclick="toggleDay(this)">
         <span class="day-badge">1일차</span>
         <span class="day-title">6월 10일 (수) · 무리하지 않는 첫날, 아케이드 산책과 대욕장</span>
+        <span class="weather-badge loading" id="weather-0">⏳ --</span>
         <span class="day-toggle">▾</span>
       </div>
       <div class="day-body">
@@ -405,14 +605,14 @@
         <div class="schedule-item">
           <div class="schedule-time">16:30 ~ 17:00</div>
           <div class="schedule-content">
-            <div class="schedule-main">🏨 숙소 체크인</div>
+            <div class="schedule-main">🏨 숙소 체크인 <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=REF+Matsuyama+City+Station+by+Vessel+Hotel" target="_blank" rel="noopener">🗺️ 지도</a></div>
             <div class="schedule-desc">REF 마쓰야마 시티 스테이션 바이 베셀 호텔 (역 직결) — 짐을 풀고 잠시 휴식</div>
           </div>
         </div>
         <div class="schedule-item">
           <div class="schedule-time">17:00 ~ 18:00</div>
           <div class="schedule-content">
-            <div class="schedule-main">🎡 쿠루린 대관람차 탑승</div>
+            <div class="schedule-main">🍡 쿨루린 대관람차 탑승 <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Matsuyama+Takashimaya+Kururin+Ferris+Wheel+Ehime" target="_blank" rel="noopener">🗺️ 지도</a></div>
             <div class="schedule-desc">다카시마야 백화점 옥상 — 무료 쿠폰으로 관람차를 타며 석양과 시내 전경 감상</div>
           </div>
         </div>
@@ -431,27 +631,28 @@
       <div class="day-header" onclick="toggleDay(this)">
         <span class="day-badge">2일차</span>
         <span class="day-title">6월 11일 (목) · 마쓰야마성 중심의 도심 문화일</span>
+        <span class="weather-badge loading" id="weather-1">⏳ --</span>
         <span class="day-toggle">▾</span>
       </div>
       <div class="day-body">
         <div class="schedule-item">
           <div class="schedule-time">09:30 ~</div>
           <div class="schedule-content">
-            <div class="schedule-main">🏯 마쓰야마성 관람</div>
+            <div class="schedule-main">🏯 마쓰야마성 관람 <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Matsuyama+Castle+Ehime" target="_blank" rel="noopener">🗺️ 지도</a></div>
             <div class="schedule-desc">무료 쿠폰으로 로프웨이 또는 1인승 리프트를 타고 성에 올라 탁 트인 세토내해 감상</div>
           </div>
         </div>
         <div class="schedule-item">
           <div class="schedule-time">점심</div>
           <div class="schedule-content">
-            <div class="schedule-main">🍱 향토요리점 '고시키(五志喜)'</div>
+            <div class="schedule-main">🍱 향토요리점 '고시키(五志喜)' <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%94%E5%BF%97%E5%96%9C+%E6%9D%BE%E5%B1%B1" target="_blank" rel="noopener">🗺️ 지도</a></div>
             <div class="schedule-desc">1635년 창업 유서 깊은 곳에서 마쓰야마식 또는 우와지마식 타이메시와 지역 식재료 요리 맛보기</div>
           </div>
         </div>
         <div class="schedule-item">
           <div class="schedule-time">오후</div>
           <div class="schedule-content">
-            <div class="schedule-main">🏛️ 반스이소 &amp; 언덕 위의 구름 뮤지엄</div>
+            <div class="schedule-main">🏛️ 반스이소 &amp; 언덕 위의 구름 뮤지엄 <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%9D%82%E3%81%AE%E4%B8%8A%E3%81%AE%E9%9B%B2%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0+%E6%9D%BE%E5%B1%B1" target="_blank" rel="noopener">🗺️ 지도</a></div>
             <div class="schedule-desc">프랑스풍 별장 반스이소와 안도 다다오 디자인의 건축물을 호젓하게 관람</div>
           </div>
         </div>
@@ -477,20 +678,21 @@
       <div class="day-header" onclick="toggleDay(this)">
         <span class="day-badge">3일차</span>
         <span class="day-title">6월 12일 (금) · 온천 마을로 이동, 온전한 료칸 힐링</span>
+        <span class="weather-badge loading" id="weather-2">⏳ --</span>
         <span class="day-toggle">▾</span>
       </div>
       <div class="day-body">
         <div class="schedule-item">
           <div class="schedule-time">10:00 ~</div>
           <div class="schedule-content">
-            <div class="schedule-main">🏨 REF 호텔 체크아웃 및 도고 온천 이동</div>
+            <div class="schedule-main">🏨 REF 호텔 체크아웃 및 도고 온천 이동 <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Dogo+Onsen+Station+Matsuyama" target="_blank" rel="noopener">🗺️ 지도</a></div>
             <div class="schedule-desc">노면전차(트램)를 타고 도고온천역으로 이동 (약 20분 소요)</div>
           </div>
         </div>
         <div class="schedule-item">
           <div class="schedule-time">10:30 ~ 12:00</div>
           <div class="schedule-content">
-            <div class="schedule-main">🧳 도고칸 짐 보관 &amp; 하이카라도리 산책</div>
+            <div class="schedule-main">🧳 도고칸 짐 보관 &amp; 하이카라도리 산책 <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%81%93%E5%BE%8C%E9%A4%A8+Dogo+Kan+Ryokan" target="_blank" rel="noopener">🗺️ 지도</a></div>
             <div class="schedule-desc">최고급 료칸 도고칸에 캐리어를 먼저 맡기고 도고온천 본관 외관 구경, 하이카라도리 상점가 산책</div>
           </div>
         </div>
@@ -504,7 +706,7 @@
         <div class="schedule-item">
           <div class="schedule-time">13:00 ~ 15:00</div>
           <div class="schedule-content">
-            <div class="schedule-main">♨️ 아스카노유 온천 체험</div>
+            <div class="schedule-main">♨️ 아스카노유 온천 체험 <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%A3%9B%E9%B3%A5%E4%B9%83%E6%B9%AF%E6%B3%89+%E9%81%93%E5%BE%8C%E6%B8%A9%E6%B3%89" target="_blank" rel="noopener">🗺️ 지도</a></div>
             <div class="schedule-desc">도고칸 프런트에서 온천 바구니·타월을 빌려 무료 쿠폰으로 아스카노유(별관)에서 입욕</div>
           </div>
         </div>
@@ -523,6 +725,7 @@
       <div class="day-header" onclick="toggleDay(this)">
         <span class="day-badge">4일차</span>
         <span class="day-title">6월 13일 (토) · 서두르지 않는 아침, 기념품 쇼핑 및 귀국</span>
+        <span class="weather-badge loading" id="weather-3">⏳ --</span>
         <span class="day-toggle">▾</span>
       </div>
       <div class="day-body">
@@ -593,6 +796,240 @@
     </div>
   </div>
 
+  <!-- ============================
+       4. 실시간 환율
+       ============================ -->
+  <div class="block">
+    <div class="block-title">
+      <div class="block-icon">💴</div>
+      실시간 환율 (JPY → KRW)
+    </div>
+    <div class="rate-widget">
+      <div class="rate-header">
+        <span class="rate-pair">JPY <em>→</em> KRW</span>
+        <span class="rate-updated" id="rate-date">로딩 중...</span>
+      </div>
+      <div class="rate-body">
+        <div id="rate-content" class="rate-loading">⏳ 환율 정보를 가져오는 중...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================
+       5. 교통 요금 가이드
+       ============================ -->
+  <div class="block">
+    <div class="block-title">
+      <div class="block-icon">🚃</div>
+      교통 요금 가이드
+    </div>
+    <div class="transport-grid">
+      <div class="transport-item">
+        <div class="transport-icon">🚋</div>
+        <div class="transport-name">노면전차 1회</div>
+        <div class="transport-fare">¥180</div>
+        <div class="transport-sub">균일 요금<br>IC카드 사용 가능</div>
+      </div>
+      <div class="transport-item">
+        <div class="transport-icon">🎟️</div>
+        <div class="transport-name">1일 승차권</div>
+        <div class="transport-fare">¥700</div>
+        <div class="transport-sub">이요철도 시내선<br>4회 이상 시 이득</div>
+      </div>
+      <div class="transport-item">
+        <div class="transport-icon">🎫</div>
+        <div class="transport-name">2일 승차권</div>
+        <div class="transport-fare">¥1,100</div>
+        <div class="transport-sub">이요철도 시내선<br>숙박 포함 일정 추천</div>
+      </div>
+    </div>
+    <div class="info-box">
+      <strong>🚌 무료 셔틀버스</strong> — 마쓰야마공항 → 마쓰야마시역, 한국인 데스크에서 셔틀권 수령<br>
+      <strong>🚋 시내 ↔ 도고온천역</strong> — 약 20분 소요, 요금 ¥180 (1회권)<br>
+      <strong>💳 IC카드</strong> — Suica · ICOCA 등 교통카드 사용 가능, 현금보다 편리
+    </div>
+  </div>
+
+  <!-- ============================
+       6. 필수 앱 목록
+       ============================ -->
+  <div class="block">
+    <div class="block-title">
+      <div class="block-icon">📱</div>
+      필수 앱 목록
+    </div>
+    <div class="app-grid">
+      <div class="app-item">
+        <div class="app-icon">🗺️</div>
+        <div class="app-name">Google Maps</div>
+        <div class="app-desc">출발 전 에히메 오프라인 지도 저장 필수</div>
+        <span class="app-tag">필수</span>
+      </div>
+      <div class="app-item">
+        <div class="app-icon">🔤</div>
+        <div class="app-name">Google 번역</div>
+        <div class="app-desc">일본어 오프라인 언어팩 미리 다운로드</div>
+        <span class="app-tag">필수</span>
+      </div>
+      <div class="app-item">
+        <div class="app-icon">🚆</div>
+        <div class="app-name">Hyperdia</div>
+        <div class="app-desc">일본 대중교통 환승 경로 검색</div>
+        <span class="app-tag">추천</span>
+      </div>
+      <div class="app-item">
+        <div class="app-icon">💬</div>
+        <div class="app-name">LINE</div>
+        <div class="app-desc">숙소·식당 현지 연락 시 주로 사용</div>
+        <span class="app-tag">추천</span>
+      </div>
+      <div class="app-item">
+        <div class="app-icon">💳</div>
+        <div class="app-name">카카오뱅크/토스</div>
+        <div class="app-desc">해외 결제 실시간 알림 및 환전 우대</div>
+        <span class="app-tag">추천</span>
+      </div>
+      <div class="app-item">
+        <div class="app-icon">💱</div>
+        <div class="app-name">XE Currency</div>
+        <div class="app-desc">엔↔원 실시간 환율 계산기</div>
+        <span class="app-tag">유용</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================
+       7. 온천 에티켓 가이드
+       ============================ -->
+  <div class="block">
+    <div class="block-title">
+      <div class="block-icon">♨️</div>
+      온천 에티켓 가이드
+    </div>
+    <div class="onsen-steps">
+      <div class="onsen-step">
+        <span class="step-num">1</span>
+        <div class="step-text"><strong>귀중품은 프런트에 맡기기</strong> — 탕 안에는 지갑·스마트폰 반입 불가, 도고칸 프런트에서 안전하게 보관</div>
+      </div>
+      <div class="onsen-step">
+        <span class="step-num">2</span>
+        <div class="step-text"><strong>입욕 전 반드시 샤워</strong> — 비치된 샴푸·바디워시로 몸을 깨끗이 씻은 후 탕에 입장 (필수 에티켓)</div>
+      </div>
+      <div class="onsen-step">
+        <span class="step-num">3</span>
+        <div class="step-text"><strong>수건은 탕 안에 넣지 않기</strong> — 작은 수건(테누구이)은 머리 위에 올려두거나 탕 밖에 보관</div>
+      </div>
+      <div class="onsen-step">
+        <span class="step-num">4</span>
+        <div class="step-text"><strong>조용히, 천천히</strong> — 큰 소리·뛰기 금지, 다른 입욕객을 배려한 조용한 분위기 유지</div>
+      </div>
+      <div class="onsen-step">
+        <span class="step-num">5</span>
+        <div class="step-text"><strong>입욕 시간은 10~15분</strong> — 고온탕 장시간 입욕은 탈수·어지럼증 유발, 중간 휴식 권장</div>
+      </div>
+      <div class="onsen-step">
+        <span class="step-num">6</span>
+        <div class="step-text"><strong>문신(타투) 정책 확인</strong> — 아스카노유 등 공공 온천은 문신 입욕 불가 가능, 도고칸 개인탕(가족탕)은 별도 문의 필요</div>
+      </div>
+      <div class="onsen-step">
+        <span class="step-num">7</span>
+        <div class="step-text"><strong>입욕 전후 수분 보충</strong> — 비치된 물이나 자판기 음료로 충분히 보충 (음주 후 입욕 금지)</div>
+      </div>
+    </div>
+    <div class="onsen-compare">
+      <div class="onsen-place">
+        <div class="onsen-place-name">♨️ 도고칸 (료칸 노천탕)</div>
+        <div class="onsen-place-row"><strong>유형</strong> 숙박객 전용</div>
+        <div class="onsen-place-row"><strong>특징</strong> 노천탕·실내탕, 안도 다다오 설계</div>
+        <div class="onsen-place-row"><strong>요금</strong> 숙박 포함</div>
+        <div class="onsen-place-row"><strong>분위기</strong> 프라이빗, 고급</div>
+      </div>
+      <div class="onsen-place">
+        <div class="onsen-place-name">♨️ 아스카노유 (도고 별관)</div>
+        <div class="onsen-place-row"><strong>유형</strong> 공공 온천</div>
+        <div class="onsen-place-row"><strong>특징</strong> 개인탕·대중탕, 무료 쿠폰 사용</div>
+        <div class="onsen-place-row"><strong>요금</strong> ¥610~ (쿠폰 적용 가능)</div>
+        <div class="onsen-place-row"><strong>분위기</strong> 전통, 관광 명소</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================
+       8. 기념품 추천 리스트
+       ============================ -->
+  <div class="block">
+    <div class="block-title">
+      <div class="block-icon">🎁</div>
+      기념품 추천 리스트
+    </div>
+    <div class="souvenir-item">
+      <span class="souvenir-emoji">🍡</span>
+      <div class="souvenir-info">
+        <div class="souvenir-name">봇짱 단고 (坊っちゃん団子)</div>
+        <div class="souvenir-desc">마쓰야마를 대표하는 3색 단고. 팥·노른자·쑥 앙금을 꽂은 마쓰야마 정통 과자</div>
+        <div class="souvenir-meta">
+          <span class="souvenir-price">¥250~400</span>
+          <span class="souvenir-where">하이카라도리 · 도고온천역 앞</span>
+        </div>
+      </div>
+    </div>
+    <div class="souvenir-item">
+      <span class="souvenir-emoji">🍰</span>
+      <div class="souvenir-info">
+        <div class="souvenir-name">마쓰야마 타르트 (松山タルト)</div>
+        <div class="souvenir-desc">유자잼 소를 넣은 카스텔라 롤 과자. 에히메 현 전통 화과자로 가족 선물용으로 인기</div>
+        <div class="souvenir-meta">
+          <span class="souvenir-price">¥1,000~2,500</span>
+          <span class="souvenir-where">오카이도 아케이드 · 공항</span>
+        </div>
+      </div>
+    </div>
+    <div class="souvenir-item">
+      <span class="souvenir-emoji">🍊</span>
+      <div class="souvenir-info">
+        <div class="souvenir-name">미칸(귤) 관련 상품</div>
+        <div class="souvenir-desc">에히메는 일본 최대 귤 산지. 귤 젤리·주스·잼 등 종류가 다양하며 가격도 합리적</div>
+        <div class="souvenir-meta">
+          <span class="souvenir-price">¥300~1,200</span>
+          <span class="souvenir-where">도고 상점가 · 공항 · 아케이드</span>
+        </div>
+      </div>
+    </div>
+    <div class="souvenir-item">
+      <span class="souvenir-emoji">🛁</span>
+      <div class="souvenir-info">
+        <div class="souvenir-name">도고온천 타올</div>
+        <div class="souvenir-desc">도고온천 공식 로고·봇짱 캐릭터 디자인 타올. 사용하기 좋고 실용적인 기념품</div>
+        <div class="souvenir-meta">
+          <span class="souvenir-price">¥500~1,500</span>
+          <span class="souvenir-where">하이카라도리 · 아스카노유 기념품샵</span>
+        </div>
+      </div>
+    </div>
+    <div class="souvenir-item">
+      <span class="souvenir-emoji">🧼</span>
+      <div class="souvenir-info">
+        <div class="souvenir-name">미강 비누 (米ぬか石けん)</div>
+        <div class="souvenir-desc">도고온천수와 쌀겨를 활용한 보습 비누. 피부 미용 효과로 여성 인기 기념품</div>
+        <div class="souvenir-meta">
+          <span class="souvenir-price">¥500~900</span>
+          <span class="souvenir-where">도고 온천가 · 하이카라도리</span>
+        </div>
+      </div>
+    </div>
+    <div class="souvenir-item">
+      <span class="souvenir-emoji">🎋</span>
+      <div class="souvenir-info">
+        <div class="souvenir-name">이요카스리 (伊予絣) 소품</div>
+        <div class="souvenir-desc">에히메 전통 쪽빛 직물로 만든 손수건·파우치 등. 고급스러운 일본 전통 공예품</div>
+        <div class="souvenir-meta">
+          <span class="souvenir-price">¥800~3,000</span>
+          <span class="souvenir-where">오카이도 아케이드 공예점</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </main>
 
 <footer>© 2026 WoonKyong · 마쓰야마 즐거운 여행 되세요! 🍊</footer>
@@ -643,6 +1080,118 @@
   }
 
   loadState();
+
+  // ===== Real-time Weather (Open-Meteo, no API key required) =====
+  // Matsuyama coordinates
+  const LAT = 33.84;
+  const LON = 132.77;
+  const DATES = ['2026-06-10', '2026-06-11', '2026-06-12', '2026-06-13'];
+
+  function wmoToIcon(code) {
+    if (code === 0)                     return '☀️';
+    if (code <= 2)                      return '🌤️';
+    if (code === 3)                     return '☁️';
+    if (code <= 48)                     return '🌫️';
+    if (code <= 55)                     return '🌦️';
+    if (code <= 65)                     return '🌧️';
+    if (code <= 77)                     return '❄️';
+    if (code <= 82)                     return '🌦️';
+    if (code <= 99)                     return '⛈️';
+    return '🌡️';
+  }
+
+  function wmoToLabel(code) {
+    if (code === 0)          return '맑음';
+    if (code <= 2)           return '구름 조금';
+    if (code === 3)          return '흐림';
+    if (code <= 48)          return '안개';
+    if (code <= 55)          return '이슬비';
+    if (code <= 65)          return '비';
+    if (code <= 77)          return '눈';
+    if (code <= 82)          return '소나기';
+    if (code <= 99)          return '뇌우';
+    return '';
+  }
+
+  async function fetchWeather() {
+    const url = new URL('https://api.open-meteo.com/v1/forecast');
+    url.searchParams.set('latitude', LAT);
+    url.searchParams.set('longitude', LON);
+    url.searchParams.set('daily', [
+      'weathercode',
+      'temperature_2m_max',
+      'temperature_2m_min',
+      'precipitation_probability_max'
+    ].join(','));
+    url.searchParams.set('timezone', 'Asia/Tokyo');
+    url.searchParams.set('start_date', DATES[0]);
+    url.searchParams.set('end_date', DATES[DATES.length - 1]);
+
+    try {
+      const res = await fetch(url.toString());
+      if (!res.ok) throw new Error('network');
+      const data = await res.json();
+      const { time, weathercode, temperature_2m_max, temperature_2m_min, precipitation_probability_max } = data.daily;
+
+      DATES.forEach((date, i) => {
+        const idx = time.indexOf(date);
+        const el = document.getElementById('weather-' + i);
+        if (!el) return;
+
+        if (idx === -1) {
+          el.classList.add('error');
+          return;
+        }
+
+        const icon  = wmoToIcon(weathercode[idx]);
+        const label = wmoToLabel(weathercode[idx]);
+        const tMax  = Math.round(temperature_2m_max[idx]);
+        const tMin  = Math.round(temperature_2m_min[idx]);
+        const rain  = precipitation_probability_max[idx];
+
+        el.classList.remove('loading');
+        el.innerHTML =
+          `<span class="w-icon" title="${label}">${icon}</span>` +
+          `<span class="w-temp">${tMin}°~${tMax}°</span>` +
+          `<span class="w-rain">💧${rain}%</span>`;
+      });
+    } catch (e) {
+      DATES.forEach((_, i) => {
+        const el = document.getElementById('weather-' + i);
+        if (el) el.classList.add('error');
+      });
+    }
+  }
+
+  fetchWeather();
+
+  // ===== Real-time Exchange Rate (Frankfurter API, no key required) =====
+  async function fetchExchangeRate() {
+    const amounts = [100, 1000, 5000, 10000, 20000];
+    try {
+      const res = await fetch('https://api.frankfurter.app/latest?from=JPY&to=KRW');
+      if (!res.ok) throw new Error('network');
+      const data = await res.json();
+      const rate = data.rates.KRW; // KRW per 1 JPY
+      document.getElementById('rate-date').textContent = `기준일: ${data.date}`;
+      document.getElementById('rate-content').innerHTML =
+        `<table class="rate-table">` +
+        amounts.map(jpy =>
+          `<tr>
+            <td>¥${jpy.toLocaleString()}</td>
+            <td style="color:var(--text-sub);padding:0 8px">→</td>
+            <td>${Math.round(jpy * rate).toLocaleString()} 원</td>
+          </tr>`
+        ).join('') +
+        `</table>
+        <p class="rate-note">100엔 = 약 ${Math.round(100 * rate).toLocaleString()}원</p>`;
+    } catch (e) {
+      const el = document.getElementById('rate-content');
+      if (el) el.innerHTML = '<p style="color:var(--text-sub);font-size:13px;text-align:center;padding:12px">환율 정보를 불러올 수 없습니다</p>';
+    }
+  }
+
+  fetchExchangeRate();
 </script>
 
 </body>
