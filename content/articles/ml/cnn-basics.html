@@ -1,0 +1,26 @@
+<p>CNN(Convolutional Neural Network)은 이미지처럼 격자 구조를 가진 데이터에 특화된 신경망입니다. 모든 픽셀을 통째로 연결하는 대신, 작은 필터를 이미지 위에서 미끄러뜨리며 국소 패턴을 학습합니다.</p>
+
+<h2>완전연결이 비효율적인 이유</h2>
+<p>224×224 컬러 이미지를 그냥 펼치면 입력이 15만 차원이고, 첫 층만 해도 파라미터가 폭발합니다. 게다가 고양이가 화면 어디에 있든 같은 고양이인데, 완전연결망은 위치마다 따로 학습해야 합니다. CNN은 이 두 문제를 한 번에 해결합니다.</p>
+
+<h2>합성곱의 두 가지 핵심 성질</h2>
+<ul>
+  <li><strong>지역 연결(local connectivity):</strong> 각 뉴런은 입력의 작은 영역(receptive field)만 본다.</li>
+  <li><strong>가중치 공유(weight sharing):</strong> 같은 필터를 이미지 전체에 재사용한다. 덕분에 파라미터가 적고, 위치가 바뀌어도 같은 패턴을 잡는 평행이동 불변성(translation invariance)을 얻는다.</li>
+</ul>
+<p>출력 특성 맵의 크기는 다음으로 계산합니다.</p>
+<pre><code>out = (W − F + 2P) / S + 1
+# W: 입력 크기, F: 필터 크기, P: 패딩, S: 스트라이드</code></pre>
+
+<h2>전형적인 구성 요소</h2>
+<ul>
+  <li><strong>Conv 층:</strong> 여러 필터로 엣지·질감 등 특징을 추출한다. 층이 깊어질수록 더 추상적인 특징(눈, 바퀴 등)을 본다.</li>
+  <li><strong>활성화:</strong> 보통 ReLU로 비선형성을 준다.</li>
+  <li><strong>Pooling:</strong> max pooling 등으로 공간 크기를 줄여 계산을 덜고 약간의 불변성을 더한다.</li>
+  <li><strong>마지막 단계:</strong> 특징 맵을 펼쳐 완전연결층 또는 global average pooling으로 분류한다.</li>
+</ul>
+
+<h2>이후의 발전</h2>
+<p>층을 깊게 쌓으면 학습이 어려워지는데, ResNet의 잔차 연결(skip connection)이 그래디언트 흐름을 열어 매우 깊은 망을 가능하게 했습니다. 이후 BatchNorm, 1×1 conv 등이 표준이 되었습니다.</p>
+
+<blockquote>한 줄 요약: CNN은 "작은 필터를 모든 위치에 공유"한다는 한 가지 아이디어로 파라미터를 줄이고 평행이동 불변성을 얻는다.</blockquote>

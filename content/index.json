@@ -1,0 +1,386 @@
+{
+  "categories": [
+    {
+      "id": "stocks",
+      "label": "주식",
+      "emoji": "📈",
+      "description": "주식 투자 노트와 자료 모음",
+      "accent": "#059669",
+      "accent2": "#34d399"
+    },
+    {
+      "id": "real-estate",
+      "label": "부동산",
+      "emoji": "🏠",
+      "description": "부동산 관련 기록과 자료",
+      "accent": "#d97706",
+      "accent2": "#fbbf24"
+    },
+    {
+      "id": "travel",
+      "label": "여행",
+      "emoji": "✈️",
+      "description": "여행 기록과 준비 자료",
+      "accent": "#0284c7",
+      "accent2": "#38bdf8"
+    },
+    {
+      "id": "study",
+      "label": "고등학생 자녀 학습방법",
+      "emoji": "📚",
+      "description": "고등학생 학습 방법과 원칙",
+      "accent": "#7c3aed",
+      "accent2": "#a78bfa"
+    },
+    {
+      "id": "ml",
+      "label": "ML — DNN · RL",
+      "emoji": "🤖",
+      "description": "딥러닝, 강화학습 정리 노트",
+      "accent": "#4f46e5",
+      "accent2": "#818cf8"
+    },
+    {
+      "id": "english",
+      "label": "초등학생 자녀 영어교육",
+      "emoji": "🔤",
+      "description": "초등 영어 교육 자료와 방법",
+      "accent": "#e11d48",
+      "accent2": "#fb7185"
+    }
+  ],
+  "articles": [
+    {
+      "id": "stocks-valuation-basics",
+      "category": "stocks",
+      "title": "PER·PBR 기초: 숫자 뒤의 의미",
+      "date": "2026-06-25",
+      "summary": "밸류에이션 지표를 처음 볼 때 흔히 하는 오해와 업종 비교의 중요성.",
+      "tags": ["밸류에이션", "기초"],
+      "path": "content/articles/stocks/valuation-basics.html"
+    },
+    {
+      "id": "real-estate-lease-checklist",
+      "category": "real-estate",
+      "title": "전세 계약 전 확인할 것들",
+      "date": "2026-06-20",
+      "summary": "등기부등본, 확정일자, 전세보증보험까지 — 계약 전 체크리스트.",
+      "tags": ["전세", "체크리스트"],
+      "path": "content/articles/real-estate/lease-checklist.html"
+    },
+    {
+      "id": "travel-matsuyama-2026",
+      "category": "travel",
+      "title": "마쓰야마 3박 4일 여정 (2026.06)",
+      "date": "2026-06-09",
+      "summary": "도심 문화와 도고온천 료칸 힐링을 묶은 무리하지 않는 일정.",
+      "tags": ["일본", "마쓰야마", "온천"],
+      "path": "content/articles/travel/matsuyama-2026.html"
+    },
+    {
+      "id": "study-principles",
+      "category": "study",
+      "title": "고등학생 공부 핵심 원칙 8가지",
+      "date": "2026-06-15",
+      "summary": "성적은 머리보다 습관이 만든다 — 매일의 작은 행동을 위한 원칙들.",
+      "tags": ["학습법", "습관"],
+      "path": "content/articles/study/study-principles.html"
+    },
+    {
+      "id": "ml-dqn-notes",
+      "category": "ml",
+      "title": "DQN 정리: Q-learning에서 심층 강화학습으로",
+      "date": "2026-06-28",
+      "summary": "experience replay와 target network가 학습을 안정화하는 이유.",
+      "tags": ["RL", "DQN"],
+      "path": "content/articles/ml/dqn-notes.html"
+    },
+    {
+      "id": "english-phonics-roadmap",
+      "category": "english",
+      "title": "초등 영어 로드맵: 파닉스부터 리딩까지",
+      "date": "2026-06-22",
+      "summary": "소리-글자 연결에서 시작해 스스로 읽는 아이로 가는 단계별 길.",
+      "tags": ["파닉스", "리딩", "로드맵"],
+      "path": "content/articles/english/phonics-roadmap.html"
+    },
+    {
+      "id": "stocks-diversification",
+      "category": "stocks",
+      "title": "분산투자: 종목 수가 아니라 상관관계다",
+      "date": "2026-01-12",
+      "summary": "분산은 수익을 키우는 기술이 아니라 치명상을 막는 방어 장치다.",
+      "tags": ["분산투자", "포트폴리오", "위험관리"],
+      "path": "content/articles/stocks/diversification.html"
+    },
+    {
+      "id": "stocks-dividend-investing",
+      "category": "stocks",
+      "title": "배당주 투자: 수익률보다 지속성을 보라",
+      "date": "2026-02-23",
+      "summary": "높은 배당수익률은 매력이 아니라 경고일 수 있다.",
+      "tags": ["배당주", "배당", "현금흐름"],
+      "path": "content/articles/stocks/dividend-investing.html"
+    },
+    {
+      "id": "stocks-etf-basics",
+      "category": "stocks",
+      "title": "ETF 기초: 손쉬운 분산의 도구와 함정",
+      "date": "2026-04-08",
+      "summary": "낮은 비용으로 시장을 따라가는 도구, 다만 구성 종목은 꼭 확인하자.",
+      "tags": ["ETF", "지수투자", "분산투자"],
+      "path": "content/articles/stocks/etf-basics.html"
+    },
+    {
+      "id": "stocks-economic-moat",
+      "category": "stocks",
+      "title": "경제적 해자: 누가 이 돈을 빼앗아 갈 수 있는가",
+      "date": "2026-06-02",
+      "summary": "해자가 넓은지보다 시간이 갈수록 넓어지는지가 더 중요하다.",
+      "tags": ["경제적해자", "기업분석", "가치투자"],
+      "path": "content/articles/stocks/economic-moat.html"
+    },
+    {
+      "id": "real-estate-housing-subscription",
+      "category": "real-estate",
+      "title": "주택청약 제도 한눈에 정리하기",
+      "date": "2026-01-12",
+      "summary": "청약통장부터 가점제·추첨제, 당첨 후 자금 계획까지 내 집 마련 첫걸음 정리.",
+      "tags": ["주택청약", "내집마련", "가점제"],
+      "path": "content/articles/real-estate/housing-subscription.html"
+    },
+    {
+      "id": "real-estate-property-taxes",
+      "category": "real-estate",
+      "title": "부동산 세금: 살 때·가질 때·팔 때",
+      "date": "2026-02-23",
+      "summary": "취득세, 재산세·종부세, 양도소득세를 단계별로 쉽게 정리한 가이드.",
+      "tags": ["부동산세금", "양도세", "취득세"],
+      "path": "content/articles/real-estate/property-taxes.html"
+    },
+    {
+      "id": "real-estate-mortgage-basics",
+      "category": "real-estate",
+      "title": "주택담보대출 LTV·DTI·DSR 이해하기",
+      "date": "2026-04-08",
+      "summary": "세 가지 비율이 대출 한도를 어떻게 정하는지 표로 비교해 정리.",
+      "tags": ["주택담보대출", "LTV", "DSR"],
+      "path": "content/articles/real-estate/mortgage-basics.html"
+    },
+    {
+      "id": "real-estate-jeonse-vs-monthly",
+      "category": "real-estate",
+      "title": "전세 vs 월세, 우리 집엔 뭐가 유리할까",
+      "date": "2026-05-30",
+      "summary": "전세대출 이자와 월세를 금리·위험까지 따져 비교하는 법.",
+      "tags": ["전세", "월세", "주거비"],
+      "path": "content/articles/real-estate/jeonse-vs-monthly.html"
+    },
+    {
+      "id": "travel-packing-checklist",
+      "category": "travel",
+      "title": "여행 짐싸기 체크리스트",
+      "date": "2026-01-12",
+      "summary": "캐리어가 안 닫히고 충전기를 두고 오는 실수를 줄이는 용도별 짐싸기 원칙.",
+      "tags": ["짐싸기", "체크리스트", "가족여행"],
+      "path": "content/articles/travel/packing-checklist.html"
+    },
+    {
+      "id": "travel-onsen-etiquette",
+      "category": "travel",
+      "title": "일본 온천·료칸 이용 매너",
+      "date": "2026-02-20",
+      "summary": "처음 가도 머뭇거리지 않도록 정리한 온천 입욕 매너와 료칸 이용 흐름.",
+      "tags": ["온천", "료칸", "일본여행"],
+      "path": "content/articles/travel/onsen-etiquette.html"
+    },
+    {
+      "id": "travel-lcc-tips",
+      "category": "travel",
+      "title": "저비용항공(LCC) 똑똑하게 이용하기",
+      "date": "2026-04-08",
+      "summary": "운임이 아니라 총액으로 따져 가족 항공비를 알뜰하게 줄이는 LCC 활용법.",
+      "tags": ["LCC", "항공권", "여행비용"],
+      "path": "content/articles/travel/lcc-tips.html"
+    },
+    {
+      "id": "travel-fx-payment-tips",
+      "category": "travel",
+      "title": "해외 환전·카드 결제 팁",
+      "date": "2026-05-30",
+      "summary": "환율 우대와 DCC 함정만 알아도 새는 돈을 막는 환전·결제 원칙.",
+      "tags": ["환전", "해외결제", "여행꿀팁"],
+      "path": "content/articles/travel/fx-payment-tips.html"
+    },
+    {
+      "id": "study-time-management",
+      "category": "study",
+      "title": "고등학생 시간관리와 공부 플래너 작성법",
+      "date": "2026-01-12",
+      "summary": "지킬 수 있는 계획을 세우는 현실적인 플래너 작성 5단계.",
+      "tags": ["시간관리", "공부플래너", "계획"],
+      "path": "content/articles/study/time-management.html"
+    },
+    {
+      "id": "study-error-notebook",
+      "category": "study",
+      "title": "효과적인 오답노트 만드는 법",
+      "date": "2026-02-20",
+      "summary": "틀린 문제를 약점 지도로 바꾸는 오답노트 정리 4가지.",
+      "tags": ["오답노트", "복습", "약점관리"],
+      "path": "content/articles/study/error-notebook.html"
+    },
+    {
+      "id": "study-focus-environment",
+      "category": "study",
+      "title": "집중 잘 되는 공부 환경 만들기",
+      "date": "2026-04-08",
+      "summary": "의지가 아니라 환경으로 집중력을 만드는 실전 방법.",
+      "tags": ["집중력", "공부환경", "습관"],
+      "path": "content/articles/study/focus-environment.html"
+    },
+    {
+      "id": "study-sleep-and-memory",
+      "category": "study",
+      "title": "수면과 기억의 관계, 잠도 공부다",
+      "date": "2026-06-03",
+      "summary": "기억을 정리하는 수면의 역할과 잘 자는 습관 만들기.",
+      "tags": ["수면", "기억력", "컨디션관리"],
+      "path": "content/articles/study/sleep-and-memory.html"
+    },
+    {
+      "id": "ml-backpropagation",
+      "category": "ml",
+      "title": "역전파(backpropagation) 기초: 연쇄법칙으로 그래디언트 구하기",
+      "date": "2026-01-12",
+      "summary": "신경망 학습의 심장인 역전파를 계산 그래프와 연쇄법칙으로 직관적으로 이해하기.",
+      "tags": ["DNN", "역전파", "기초"],
+      "path": "content/articles/ml/backpropagation.html"
+    },
+    {
+      "id": "ml-regularization",
+      "category": "ml",
+      "title": "과적합과 정규화: L2 · Dropout · Early stopping",
+      "date": "2026-02-23",
+      "summary": "모델이 데이터를 외우지 않고 일반화하게 만드는 정규화 기법 정리.",
+      "tags": ["DNN", "정규화", "일반화"],
+      "path": "content/articles/ml/regularization.html"
+    },
+    {
+      "id": "ml-cnn-basics",
+      "category": "ml",
+      "title": "CNN 합성곱 신경망: 지역 연결과 가중치 공유",
+      "date": "2026-04-09",
+      "summary": "작은 필터를 모든 위치에 공유한다는 한 아이디어로 이미지를 다루는 CNN의 핵심.",
+      "tags": ["DNN", "CNN", "이미지"],
+      "path": "content/articles/ml/cnn-basics.html"
+    },
+    {
+      "id": "ml-policy-gradient",
+      "category": "ml",
+      "title": "정책 경사 방법: REINFORCE에서 PPO까지",
+      "date": "2026-06-05",
+      "summary": "정책을 직접 학습하는 강화학습, baseline과 PPO의 clip으로 안정화하기.",
+      "tags": ["RL", "정책경사", "PPO"],
+      "path": "content/articles/ml/policy-gradient.html"
+    },
+    {
+      "id": "english-sight-words",
+      "category": "english",
+      "title": "사이트워드(sight words) 통째로 익히기",
+      "date": "2026-01-12",
+      "summary": "규칙에서 벗어난 빈출 단어, 외우지 말고 책 속에서 자주 만나 친해지게 하세요.",
+      "tags": ["사이트워드", "읽기", "어휘"],
+      "path": "content/articles/english/sight-words.html"
+    },
+    {
+      "id": "english-read-aloud",
+      "category": "english",
+      "title": "영어책 읽어주기(read-aloud), 발음 걱정 없이 시작하기",
+      "date": "2026-02-23",
+      "summary": "완벽한 발음보다 매일 무릎에 앉혀 함께 책장을 넘기는 시간이 더 큰 힘이 됩니다.",
+      "tags": ["읽어주기", "그림책", "듣기"],
+      "path": "content/articles/english/read-aloud.html"
+    },
+    {
+      "id": "english-listening-methods",
+      "category": "english",
+      "title": "흘려듣기 vs 집중듣기, 어떻게 다르고 어떻게 섞을까",
+      "date": "2026-04-09",
+      "summary": "흘려듣기로 귀를 열고 집중듣기로 소리와 글자를 잇는 두 방식을 함께 활용하는 법.",
+      "tags": ["듣기", "흘려듣기", "집중듣기"],
+      "path": "content/articles/english/listening-methods.html"
+    },
+    {
+      "id": "english-english-journal",
+      "category": "english",
+      "title": "영어 일기·쓰기, 단어 하나에서 시작하기",
+      "date": "2026-06-05",
+      "summary": "그림과 단어 한 개부터 시작해 '쓰는 것이 즐겁다'는 경험을 지켜주는 쓰기 입문법.",
+      "tags": ["쓰기", "영어일기", "출력"],
+      "path": "content/articles/english/english-journal.html"
+    }
+  ],
+  "links": [
+    {
+      "category": "stocks",
+      "title": "전자공시시스템 (DART)",
+      "url": "https://dart.fss.or.kr",
+      "note": "기업 공시 원문 조회"
+    },
+    {
+      "category": "stocks",
+      "title": "한국거래소 (KRX)",
+      "url": "https://www.krx.co.kr",
+      "note": "시세·지수·상장 정보"
+    },
+    {
+      "category": "real-estate",
+      "title": "국토교통부 실거래가 공개시스템",
+      "url": "https://rt.molit.go.kr",
+      "note": "아파트·전월세 실거래가 조회"
+    },
+    {
+      "category": "real-estate",
+      "title": "인터넷등기소",
+      "url": "http://www.iros.go.kr",
+      "note": "등기부등본 열람·발급"
+    },
+    {
+      "category": "travel",
+      "title": "Open-Meteo",
+      "url": "https://open-meteo.com",
+      "note": "무료 날씨 예보 API"
+    },
+    {
+      "category": "study",
+      "title": "EBSi 고교강의",
+      "url": "https://www.ebsi.co.kr",
+      "note": "수능·내신 인터넷 강의"
+    },
+    {
+      "category": "ml",
+      "title": "Spinning Up in Deep RL (OpenAI)",
+      "url": "https://spinningup.openai.com",
+      "note": "강화학습 입문 교육 자료"
+    },
+    {
+      "category": "ml",
+      "title": "Dive into Deep Learning (D2L)",
+      "url": "https://d2l.ai",
+      "note": "코드와 함께 보는 딥러닝 교재"
+    },
+    {
+      "category": "english",
+      "title": "Starfall",
+      "url": "https://www.starfall.com",
+      "note": "초등 저학년 파닉스 연습"
+    },
+    {
+      "category": "english",
+      "title": "Oxford Owl",
+      "url": "https://www.oxfordowl.co.uk",
+      "note": "무료 e-book 리딩 자료"
+    }
+  ]
+}
