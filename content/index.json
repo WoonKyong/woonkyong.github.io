@@ -78,6 +78,15 @@
       "path": "content/articles/travel/matsuyama-2026.html"
     },
     {
+      "id": "study-exam-review-coaching",
+      "category": "study",
+      "title": "고1 기말고사 오답 분석과 과목별 코칭 전략",
+      "date": "2026-07-10",
+      "summary": "수학·영어·통합사회·통합과학 오답을 개념별로 분석하고, 부모가 코칭할 방법을 과목별로 정리.",
+      "tags": ["오답분석", "코칭", "기말고사"],
+      "path": "content/articles/study/exam-review-coaching.html"
+    },
+    {
       "id": "study-principles",
       "category": "study",
       "title": "고등학생 공부 핵심 원칙 8가지",
