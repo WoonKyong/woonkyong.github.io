@@ -29,7 +29,9 @@
         "a",
         {
           class: "category-card",
-          href: "category.html?cat=" + encodeURIComponent(cat.id),
+          href: cat.id === "travel"
+            ? "gurye.html"
+            : "category.html?cat=" + encodeURIComponent(cat.id),
           style: accentStyle(cat, "--i:" + i + ";")
         },
         [
