@@ -47,9 +47,26 @@
       "description": "초등 영어 교육 자료와 방법",
       "accent": "#e11d48",
       "accent2": "#fb7185"
+    },
+    {
+      "id": "books",
+      "label": "책",
+      "emoji": "📖",
+      "description": "읽고 싶은 책과 독서 로드맵",
+      "accent": "#b45309",
+      "accent2": "#f59e0b"
     }
   ],
   "articles": [
+    {
+      "id": "books-sapiens-level-reading-roadmap",
+      "category": "books",
+      "title": "사피엔스급 명작 독서 로드맵",
+      "date": "2026-08-27",
+      "summary": "우주와 생명에서 문명, 불확실성, AI와 인간의 미래까지 이어지는 15권의 독서 순서.",
+      "tags": ["독서로드맵", "교양", "AI"],
+      "path": "content/articles/books/sapiens-level-reading-roadmap.html"
+    },
     {
       "id": "stocks-valuation-basics",
       "category": "stocks",
