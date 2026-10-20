@@ -59,6 +59,19 @@
   ],
   "articles": [
     {
+      "id": "real-estate-gwanggyo-purchase-2026",
+      "category": "real-estate",
+      "title": "광교 아파트 언제 살 것인가 · 2026–2029",
+      "date": "2026-10-20",
+      "summary": "광교·분당 상대가치와 공급·금리·정책을 살펴보고, 매수와 전세의 순자산 차이를 직접 계산하는 보고서.",
+      "tags": [
+        "광교",
+        "매수시점",
+        "시나리오"
+      ],
+      "path": "content/articles/real-estate/gwanggyo-purchase-2026.html"
+    },
+    {
       "id": "books-sapiens-level-reading-roadmap",
       "category": "books",
       "title": "사피엔스급 명작 독서 로드맵",
