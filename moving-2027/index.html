@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#132b2e">
+  <meta name="description" content="2027년 2월 11일 광교 이사 준비 대시보드: 일정, 체크리스트, 이사 견적 비교.">
+  <title>이사 준비 대시보드 | MOVE 2027</title>
+  <style>
+    :root{--ink:#153135;--ink2:#476063;--muted:#708184;--accent:#007f73;--accent2:#c6eee3;--bg:#f5f7f5;--card:#fff;--line:#dce5e2;--warn:#ae5b20;--shadow:0 15px 50px rgba(20,49,53,.065)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.58;letter-spacing:-.025em}
+    button,input,textarea{font:inherit}
+    button{cursor:pointer}
+    a{color:inherit}
+    :focus-visible{outline:3px solid #21b6a9;outline-offset:3px}
+    .app{display:grid;grid-template-columns:238px minmax(0,1fr);min-height:100vh}
+    .sidebar{background:#122e31;color:#e4f2ee;padding:29px 18px 23px;display:flex;flex-direction:column;gap:28px;position:sticky;top:0;height:100vh}
+    .brand{padding:0 13px}.brand small{display:block;color:#9cc6c0;font-size:10px;font-weight:800;letter-spacing:.27em;text-transform:uppercase}.brand strong{display:block;font-size:27px;letter-spacing:-.07em;line-height:1.3}.brand strong em{color:#9ae0cd;font-style:normal}
+    .side-label{margin:0 13px 8px;color:#719a96;font-weight:700;font-size:11px;letter-spacing:.14em}
+    .nav{display:grid;gap:5px}.nav a{display:flex;align-items:center;gap:11px;text-decoration:none;color:#b4cbc7;font-size:13px;padding:11px 13px;border-radius:11px;font-weight:650;transition:.2s}.nav a:hover,.nav a.active{background:rgba(197,239,225,.11);color:white}.nav .num{color:#81aea5;font-weight:700;font-size:10px;width:22px}
+    .side-bottom{margin-top:auto;padding:16px 13px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08);border-radius:13px}.side-bottom strong{font-size:13px}.side-bottom p{font-size:11px;margin:6px 0 0;color:#9ebdb7}
+    .content{min-width:0;padding:0 42px 70px;max-width:1600px;width:100%;margin:auto}
+    .topbar{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:15px}.topbar .crumb{font-size:12px;font-weight:750;color:#718785}.top-actions{display:flex;gap:8px;flex-wrap:wrap}
+    .btn{border:1px solid var(--line);background:white;color:var(--ink);border-radius:10px;padding:9px 14px;font-weight:750;font-size:12px;transition:.15s}.btn:hover{border-color:#88beb2;background:#eff9f5}.btn.dark{background:#14363a;color:white;border-color:#14363a}.btn.dark:hover{background:#276165}.btn.small{padding:7px 11px}
+    section{scroll-margin-top:30px}.section{margin-top:39px}.section-title{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+    .eyebrow{font-size:11px;font-weight:850;letter-spacing:.17em;color:var(--accent);text-transform:uppercase}.section-title h2{font-size:24px;line-height:1.35;letter-spacing:-.055em;margin:3px 0 0}.section-title p{font-size:13px;color:var(--muted);margin:0}
+    .hero{position:relative;margin-top:28px;border-radius:23px;background:radial-gradient(circle at 87% 16%,#2e6764 0%,#153c3e 38%,#102a2d 82%);color:#fff;min-height:300px;overflow:hidden;padding:39px 43px;display:flex;align-items:center;justify-content:space-between;gap:35px}.hero:after{content:"";position:absolute;right:-100px;bottom:-220px;height:450px;width:450px;border:1px solid rgba(194,240,220,.22);border-radius:50%;box-shadow:0 0 0 58px rgba(194,240,220,.045),0 0 0 116px rgba(194,240,220,.045);pointer-events:none}
+    .hero-copy{position:relative;z-index:1;max-width:630px}.hero .eyebrow{color:#9ee4cf}.hero h1{font-size:clamp(31px,3.5vw,49px);line-height:1.19;letter-spacing:-.07em;margin:11px 0 16px}.hero p{font-size:14px;color:#bdd4d0;margin:0 0 23px;line-height:1.9}.route{display:inline-flex;align-items:center;gap:9px;font-size:12px;color:#d1e8e2;border:1px solid rgba(209,232,226,.22);padding:9px 13px;border-radius:30px;background:rgba(255,255,255,.06)}.route b{color:#85e0c7;font-size:14px}
+    .countdown{z-index:1;flex-shrink:0;text-align:center;border:1px solid rgba(225,255,240,.2);background:rgba(255,255,255,.055);border-radius:20px;padding:25px 34px;min-width:185px;backdrop-filter:blur(8px)}.countdown span{display:block;color:#b7d2ca;font-size:11px;font-weight:800;letter-spacing:.15em}.countdown strong{display:block;font-size:70px;line-height:1.15;letter-spacing:-.08em;font-variant-numeric:tabular-nums}.countdown small{display:block;color:#9ee4cf;font-size:12px;margin-top:5px}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:18px}.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;min-height:130px}.stat .label{font-size:12px;color:var(--muted);font-weight:700}.stat strong{display:block;font-size:27px;margin:6px 0 4px;letter-spacing:-.06em}.stat p{margin:0;color:var(--muted);font-size:11px}.bar{background:#e8eeeb;border-radius:9px;overflow:hidden;height:7px;margin:11px 0 7px}.bar > div{width:0%;height:100%;background:#058c7d;border-radius:9px;transition:width .25s}
+    .priority-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.priority{background:white;border:1px solid var(--line);border-radius:16px;padding:22px;position:relative;box-shadow:var(--shadow)}.priority .n{display:inline-flex;align-items:center;justify-content:center;height:28px;width:28px;border-radius:8px;background:#e0f4ed;color:#168273;font-size:12px;font-weight:900}.priority h3{font-size:15px;letter-spacing:-.04em;margin:15px 0 7px}.priority p{font-size:12px;line-height:1.8;color:#657a7d;margin:0}.priority.important{border-color:#e6cbb5;background:#fffbf7}.priority.important .n{background:#fbe6d7;color:#a95d2a}
+    .card{background:white;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
+    .plan-layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(260px,.7fr);gap:16px}.month-tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:19px}.month-tabs button,.filter button{border:1px solid var(--line);background:#f8faf9;color:#5a7372;border-radius:10px;font-size:12px;font-weight:750;padding:9px 15px}.month-tabs button.active,.filter button.active{color:white;background:#173d3e;border-color:#173d3e}.month-tag{display:inline-block;font-size:11px;color:#0c7b70;font-weight:800;background:#e8f8f2;padding:5px 9px;border-radius:7px}.month-heading{font-size:20px;margin:11px 0 4px}.month-note{font-size:12px;color:var(--muted);margin:0 0 16px}.month-list{padding:0;margin:0;list-style:none;display:grid;gap:11px}.month-list li{display:flex;align-items:start;gap:11px;font-size:13px;line-height:1.65}.bullet{height:7px;width:7px;flex:0 0 7px;border-radius:50%;background:#0b9283;margin-top:8px}
+    .notice{background:#eaf6f1;border:1px solid #cae8dc;border-radius:14px;padding:18px}.notice h3{font-size:14px;margin:0 0 9px}.notice p{margin:0;color:#3b6a60;font-size:12px;line-height:1.85}.milestone{margin-top:16px}.milestone .step{border-left:2px solid #d5e7df;margin-left:6px;padding:1px 0 17px 16px;position:relative}.milestone .step:before{content:"";height:10px;width:10px;background:#099486;position:absolute;top:6px;left:-6px;border-radius:50%;border:2px solid white}.milestone b{font-size:12px}.milestone p{font-size:11px;color:var(--muted);margin:2px 0}
+    .check-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:13px}.filter{display:flex;gap:7px;flex-wrap:wrap}.group{margin-top:13px;background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden}.group-head{padding:17px 20px;display:flex;align-items:center;justify-content:space-between;background:#fafdfe;border-bottom:1px solid #e7efec;gap:16px}.group-head h3{font-size:14px;margin:0}.group-head small{font-size:11px;color:#7b918d}.group-content{padding:5px 18px}.task{display:flex;align-items:flex-start;gap:12px;border-bottom:1px solid #eef3f1;padding:13px 2px;cursor:pointer}.task:last-child{border:0}.task input{accent-color:#007f73;margin:3px 0 0;width:17px;height:17px;flex:0 0 17px}.task span{font-size:13px}.task.done span{text-decoration:line-through;color:#93a39d}.task .due{margin-left:auto;font-size:10px;color:#8b9a97;white-space:nowrap;font-weight:750;padding-left:8px}.empty{padding:25px;color:var(--muted);font-size:13px;text-align:center}
+    .quote-intro{display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:19px}.quote-intro p{max-width:650px;margin:0;color:#6d817d;font-size:13px}.external{font-size:11px;font-weight:850;color:#087f72;text-decoration:none}.external:hover{text-decoration:underline}
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:13px}.quote-table{width:100%;border-collapse:collapse;min-width:900px}.quote-table th{text-align:left;font-size:11px;color:#697d7b;background:#f4f9f7;padding:12px 13px}.quote-table td{padding:13px;border-top:1px solid var(--line);vertical-align:middle}.quote-table .provider{font-size:12px;font-weight:850;white-space:nowrap}.quote-table .provider a{display:block;margin-top:5px}.quote-table input{display:block;min-width:0;width:100%;padding:9px 10px;background:#fff;border:1px solid #dce8e4;border-radius:8px;font-size:12px}.quote-table input:focus{border-color:#0ba08e;outline:2px solid #d4f1e7}.table-help{font-size:11px;color:#748782;margin:13px 0}.comparison{display:flex;align-items:center;gap:13px;flex-wrap:wrap;padding:14px 16px;background:#eff9f4;border-radius:11px;margin-top:12px}.comparison strong{font-size:13px}.comparison span{font-size:12px;color:#437468}
+    .criteria{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:17px}.criteria span{padding:10px 12px;background:#f4f8f6;border-radius:9px;font-size:12px;color:#4b6460}
+    .schedule{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.slot{background:white;border:1px solid var(--line);border-radius:15px;padding:22px 18px;min-height:186px}.slot time{font-size:12px;font-weight:900;color:#098575}.slot h3{font-size:15px;margin:11px 0 9px}.slot p{margin:0;font-size:12px;color:#6a7e7c;line-height:1.75}
+    .notes-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(250px,1fr);gap:16px}.notes-layout textarea{display:block;resize:vertical;min-height:180px;width:100%;border:1px solid var(--line);padding:15px;border-radius:11px;color:var(--ink);line-height:1.7;font-size:13px}.notes-layout textarea:focus{outline:2px solid #9dddd0;border-color:#07998a}.info-points{font-size:12px;line-height:1.85;color:#5c7370}.info-points b{color:#213e3e}.info-points p{margin:0 0 10px}
+    footer{margin-top:55px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#8c9b98;font-size:11px;border-top:1px solid var(--line);padding-top:24px}
+    @media(max-width:1100px){.app{grid-template-columns:195px minmax(0,1fr)}.sidebar{padding:24px 12px}.content{padding:0 25px 55px}.hero{padding:32px}.priority-grid,.schedule{grid-template-columns:repeat(2,minmax(0,1fr))}.plan-layout{grid-template-columns:1fr}.criteria{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:760px){.app{display:block}.sidebar{height:auto;position:static;flex-direction:row;align-items:center;justify-content:space-between;padding:13px 19px;gap:12px}.brand{padding:0}.brand strong{font-size:20px}.brand small{font-size:9px}.side-label,.side-bottom{display:none}.nav{display:flex;overflow-x:auto;gap:4px}.nav a{padding:8px 9px;font-size:11px;white-space:nowrap}.nav .num{display:none}.content{padding:0 15px 45px}.topbar{height:auto;min-height:64px;padding:10px 0}.hero{padding:29px 24px;display:block;min-height:0}.hero h1{font-size:35px}.hero p{font-size:12px}.countdown{margin-top:20px;display:flex;align-items:center;justify-content:space-between;text-align:left;padding:11px 20px;min-width:0}.countdown strong{font-size:43px}.stats{grid-template-columns:1fr;gap:9px}.stat{min-height:0;padding:15px 18px}.priority-grid,.schedule,.notes-layout{grid-template-columns:1fr}.section{margin-top:31px}.section-title h2{font-size:22px}.card{padding:19px}.criteria{grid-template-columns:1fr}.route{font-size:11px}.top-actions .btn{padding:8px 10px}}
+    @media print{.sidebar,.topbar,.top-actions,.filter,.month-tabs,.btn,#export-btn,#reset-btn{display:none!important}.app{display:block}.content{padding:0}.hero{print-color-adjust:exact;-webkit-print-color-adjust:exact}.section{break-inside:avoid}.group{break-inside:avoid}body{background:white}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><small>HOME TRANSITION</small><strong>MOVE<em>2027.</em></strong></div>
+    <div>
+      <p class="side-label">MY MOVE PLANNER</p>
+      <nav class="nav" aria-label="페이지 목차">
+        <a class="active" href="#overview"><span class="num">01</span>대시보드</a>
+        <a href="#plan"><span class="num">02</span>월별 일정</a>
+        <a href="#checklist"><span class="num">03</span>준비 체크리스트</a>
+        <a href="#quotes"><span class="num">04</span>이사 견적 비교</a>
+        <a href="#moving-day"><span class="num">05</span>이사 당일</a>
+        <a href="#notes"><span class="num">06</span>메모</a>
+      </nav>
+    </div>
+    <div class="side-bottom"><strong>우리 가족의 새로운 시작</strong><p>2027.02.11 · 광교<br>체크리스트와 견적은 이 브라우저에 저장됩니다.</p></div>
+  </aside>
+  <main class="content">
+    <div class="topbar">
+      <div class="crumb">PERSONAL DASHBOARD / MOVING PLAN</div>
+      <div class="top-actions">
+        <button class="btn" id="export-btn" type="button">↓ 데이터 백업</button>
+        <button class="btn" id="print-btn" type="button">인쇄 / PDF</button>
+      </div>
+    </div>
+
+    <section id="overview">
+      <div class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">THE NEXT CHAPTER · 2027</div>
+          <h1>새로운 집으로,<br>차근차근 준비하기.</h1>
+          <p>복잡한 이사 준비도 한눈에. 중요한 계약 일정부터<br>이사업체 견적, 이사 당일 체크까지 모두 여기에서 관리합니다.</p>
+          <div class="route"><span>자연앤자이 3단지</span><b>→</b><span>광교 써밋플레이스</span></div>
+        </div>
+        <div class="countdown"><div><span>MOVE IN · FEB 11</span><strong id="dday">D-98</strong></div><small>2027년 2월 11일 목요일</small></div>
+      </div>
+      <div class="stats">
+        <article class="stat"><div class="label">전체 준비 진행률</div><strong id="progress-num">0%</strong><div class="bar"><div id="progress-bar"></div></div><p id="progress-caption">완료 0 / 전체 0개</p></article>
+        <article class="stat"><div class="label">다음 주요 일정</div><strong id="next-date" style="font-size:22px">11월</strong><p id="next-milestone">임대인 일정 합의</p></article>
+        <article class="stat"><div class="label">견적 수집 현황</div><strong id="quote-count">0 / 4곳</strong><p>같은 조건의 방문견적으로 비교하세요.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="priorities">
+      <div class="section-title"><div><div class="eyebrow">DON'T MISS</div><h2>가장 중요한 3가지</h2></div><p>이사 당일 문제를 예방하는 핵심 항목</p></div>
+      <div class="priority-grid">
+        <article class="priority important"><span class="n">01</span><h3>기존 보증금 반환일 합의</h3><p>기존 임대차 만기일은 2월 14일입니다. 2월 11일 반환·퇴거가 가능한지 임대인과 서면으로 확정하세요.</p></article>
+        <article class="priority"><span class="n">02</span><h3>새집 잔금·열쇠 인도 시각</h3><p>기존 보증금 입금, 새집 잔금 지급, 열쇠 수령이 연결됩니다. 시간차와 차량 대기료를 사전에 협의하세요.</p></article>
+        <article class="priority"><span class="n">03</span><h3>설 연휴 전 예약 완료</h3><p>2월 11일 이사는 설 연휴 직후입니다. 이사·청소·가전·엘리베이터 예약과 금융 준비를 2월 5일까지 마무리하세요.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="plan">
+      <div class="section-title"><div><div class="eyebrow">ROADMAP</div><h2>월별 준비 로드맵</h2></div><p>월을 선택하면 해야 할 일이 바뀝니다.</p></div>
+      <div class="plan-layout">
+        <div class="card">
+          <div class="month-tabs" id="month-tabs" aria-label="월별 일정 선택">
+            <button type="button" data-month="nov" class="active">11월</button>
+            <button type="button" data-month="dec">12월</button>
+            <button type="button" data-month="jan">1월</button>
+            <button type="button" data-month="feb">2월</button>
+          </div>
+          <div id="month-panel" aria-live="polite"></div>
+        </div>
+        <aside>
+          <div class="notice"><h3>✓ 이번 이사의 핵심</h3><p>이동 거리는 짧지만 잔금과 보증금의 연결이 가장 큰 변수입니다. 업체 예약 전에 새집 입주 가능 시간부터 확인하세요.</p></div>
+          <div class="milestone" id="milestone-list"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="checklist">
+      <div class="section-title"><div><div class="eyebrow">ACTION ITEMS</div><h2>전체 준비 체크리스트</h2></div><p>클릭하면 자동으로 진행률에 반영됩니다.</p></div>
+      <div class="check-head">
+        <div class="filter" id="task-filters"><button type="button" class="active" data-filter="all">전체 보기</button><button type="button" data-filter="open">미완료</button><button type="button" data-filter="done">완료</button></div>
+        <button class="btn small" type="button" id="reset-btn">체크 초기화</button>
+      </div>
+      <div id="task-groups"></div>
+    </section>
+
+    <section class="section" id="quotes">
+      <div class="section-title"><div><div class="eyebrow">MOVING QUOTES</div><h2>이사업체 견적 비교</h2></div><p>미소 2곳 + 영구크린 1곳 + YES2424 1곳</p></div>
+      <div class="card">
+        <div class="quote-intro"><p>포장이사 방문견적을 받을 때 작업 인원, 차량, 엘리베이터 이용, 사다리차, 파손 보상, 잔금 지연 시 대기료까지 같은 기준으로 물어보세요.</p><span class="month-tag">입력 내용 자동 저장</span></div>
+        <div class="table-wrap">
+          <table class="quote-table">
+            <thead><tr><th style="width:20%">견적처</th><th style="width:14%">총액 (만원)</th><th style="width:17%">차량 / 인원</th><th style="width:20%">포함 서비스</th><th style="width:29%">메모 / 특이사항</th></tr></thead>
+            <tbody id="quote-body"></tbody>
+          </table>
+        </div>
+        <p class="table-help">금액은 만원 단위로 입력하세요. 업체별 실제 작업팀·추가요금·보험 조건을 계약서에 기록하는 것이 중요합니다. 연결된 비교견적에서 동일 팀이 중복되면 다른 업체로 바꾸세요.</p>
+        <div class="comparison" id="quote-insight"><strong>아직 비교할 견적이 없습니다.</strong><span>방문견적 금액을 2개 이상 입력해 보세요.</span></div>
+        <div class="criteria">
+          <span>□ 방문견적과 실제 투입팀 동일 여부</span><span>□ 작업 인원 및 차량 톤수</span><span>□ 가구 분해·조립 / 주방 정리</span>
+          <span>□ 사다리차·엘리베이터 추가금</span><span>□ 보증금 지연 시 차량 대기료</span><span>□ 적재물 보험 및 파손 처리</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="moving-day">
+      <div class="section-title"><div><div class="eyebrow">MOVING DAY</div><h2>2월 11일 당일 시나리오</h2></div><p>시간은 예시이며 입주 시각에 맞춰 조정하세요.</p></div>
+      <div class="schedule">
+        <article class="slot"><time>08:00 — 10:00</time><h3>기존 집 반출</h3><p>포장이사 반출, 주택 상태·계량기 촬영, 관리비 정산, 보증금 반환 및 열쇠 인도 확인</p></article>
+        <article class="slot"><time>10:00 — 12:00</time><h3>보증금·잔금 정산</h3><p>기존 보증금 입금 확인, 새집 등기사항 확인, 잔금 송금, 출입카드·열쇠 수령</p></article>
+        <article class="slot"><time>12:00 — 16:00</time><h3>새집 반입</h3><p>이삿짐 운송, 엘리베이터 사용, 가구 배치, 가전 연결, 파손 및 시설 상태 확인</p></article>
+        <article class="slot"><time>16:00 — 18:00</time><h3>마무리 점검</h3><p>이사업체 정산, 전기·수도·난방 점검, 파손 사진 기록, 인터넷·필수품 정리</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="notes">
+      <div class="section-title"><div><div class="eyebrow">PERSONAL NOTES</div><h2>협의사항과 메모</h2></div><p>중개사·임대인·이사업체에 확인할 내용</p></div>
+      <div class="notes-layout">
+        <div class="card"><textarea id="memo" aria-label="개인 이사 메모" placeholder="예) 11/10 중개사와 보증금 반환 시각 확인&#10;예) 엘리베이터 예약은 관리사무소에 전화&#10;예) 침대 / 세탁기 반입 치수 확인"></textarea><p class="table-help">이 메모는 서버로 보내지지 않고 현재 브라우저에만 저장됩니다.</p></div>
+        <div class="card info-points"><p><b>이사 완료 후</b><br>전입신고·확정일자 확인, 임대차 신고, 각종 주소 변경을 진행하세요.</p><p><b>보증금 관련 주의</b><br>기존 집 보증금이 아직 반환되지 않았다면 퇴거 및 전입신고 전에 법적 보호를 확인해야 합니다.</p><p><b>데이터 보관</b><br>브라우저 변경·기기 교체 시 내용이 자동 이전되지 않으니 상단의 '데이터 백업'을 이용하세요.</p></div>
+      </div>
+    </section>
+
+    <footer><span>MOVE 2027 · GWANGGYO / PERSONAL MOVING DASHBOARD</span><span>2027. 02. 11 · 새로운 시작을 위한 준비</span></footer>
+  </main>
+</div>
+<script>
+(function(){
+  'use strict';
+  var KEY = 'move-2027-gwanggyo-v1';
+  var groups = [
+    {name:'계약 · 보증금',due:'11월 중심',items:[
+      ['finance-old','기존 임대인과 2월 11일 퇴거 및 보증금 반환을 서면으로 합의','11월'],
+      ['finance-new','새집 임대차계약 체결 및 계약금 지급 상태 확인','11월'],
+      ['finance-balance','잔금일·송금계좌·열쇠 인도 시각 확인','11월'],
+      ['finance-register','새집 등기부등본과 근저당·권리관계 확인','1월'],
+      ['finance-bridge','기존 보증금 반환과 새집 잔금 지급의 시간차 해결','11월']
+    ]},
+    {name:'이사업체 · 예약',due:'11~12월 중심',items:[
+      ['vendor-quote','포장이사 업체 3~4곳 방문견적 받기','11월'],
+      ['vendor-book','작업팀·포함서비스 비교 후 이사업체 계약','12월'],
+      ['vendor-lift','양쪽 관리사무소 이사 엘리베이터 예약','12월'],
+      ['vendor-park','사다리차·이사 차량 진입·주차 규정 확인','12월'],
+      ['vendor-clean','새집 입주청소 가능 시점 및 업체 예약','12월']
+    ]},
+    {name:'새집 · 가구 · 가전',due:'12~1월 중심',items:[
+      ['home-measure','새집 4개 방 실측 및 가구 배치 결정','12월'],
+      ['home-pass','냉장고·세탁기·침대 등 반입 경로 확인','12월'],
+      ['home-ac','에어컨 이전·설치 및 가전 이전 필요 여부 확인','1월'],
+      ['home-inspect','수압·배수·난방·창호·결로·누수·콘센트 점검','1월'],
+      ['home-dispose','기존 집 원상복구 범위와 폐기 가구 확인','1월']
+    ]},
+    {name:'생활 서비스 · 행정',due:'1~2월 중심',items:[
+      ['admin-internet','인터넷·TV·정수기·가전 렌털 이전 예약','1월'],
+      ['admin-bills','전기·수도·가스·관리비 정산 방식 확인','2월'],
+      ['admin-ev','차량 등록, 주차 및 전기차 충전 절차 확인','1월'],
+      ['admin-address','실제 이사 후 전입신고 및 확정일자·임대차 신고 확인','2월'],
+      ['admin-accounts','은행·보험·쇼핑몰·택배 수령지 주소 변경','2월']
+    ]},
+    {name:'가족 · 짐 정리',due:'1~2월 중심',items:[
+      ['family-rooms','가족별 방과 책상·침대 배치 확정','12월'],
+      ['family-sort','중고판매·기부·폐기할 물건 정리','1월'],
+      ['family-valuable','중요 서류·현금·귀중품 별도 보관','2월'],
+      ['family-bag','옷·세면도구·충전기·약품 등 당일 필수품 포장','2월'],
+      ['family-study','아이들 학습공간과 인터넷 설치 우선순위 조율','1월']
+    ]}
+  ];
+  var periods = {
+    nov:{label:'2026년 11월',title:'계약과 자금 흐름을 확정할 시간',note:'이사 당일의 가장 큰 변수를 먼저 제거합니다.',items:['기존 집 보증금 반환일 및 퇴거일 서면 합의','새집 계약·잔금·열쇠 인도 시각 확인','기존 보증금 → 새집 잔금 자금 흐름 검증','포장이사 비교견적 3~4곳 상담 시작','관리사무소의 이사 규정과 예약 가능일 확인']},
+    dec:{label:'2026년 12월',title:'이사 관련 예약을 마칠 시간',note:'방문견적을 비교하고 실제 작업팀을 확정합니다.',items:['이사업체 선정 및 계약서에 포함 서비스 기재','양쪽 아파트 엘리베이터와 차량 동선 확인','새집 방·가구·가전 실측과 배치도 작성','입주청소·가전 설치 업체 예약','처분할 물건 구분, 중고판매·폐기 시작']},
+    jan:{label:'2027년 1월',title:'새집과 생활 이전을 준비할 시간',note:'연휴 전에 처리해야 할 예약을 모두 끝냅니다.',items:['새집 하자·시설 상태 확인 및 사진 기록','인터넷·TV·가전·정수기 등 이전 일정 예약','주차 등록·전기차 충전·관리비 절차 확인','등기사항 재확인, 송금 방법·이체 한도 점검','폐기물 처리 및 가족별 짐 정리']},
+    feb:{label:'2027년 2월',title:'이사 당일 변수를 최소화할 시간',note:'설 연휴 전에 모든 핵심 확인을 끝냅니다.',items:['2월 5일까지 이사업체·청소·가전·엘리베이터 재확인','2월 10일 양쪽 임대인·중개사와 정산·인도 시각 확인','2월 11일 보증금 입금 → 잔금 지급 → 열쇠 인도','이사 후 시설 점검 및 파손 사진·정산 기록','전입신고·확정일자·각종 주소 변경 마무리']}
+  };
+  var milestones = [
+    {date:'2026-11-15',label:'기존 집 퇴거·보증금 일정 협의'},
+    {date:'2026-12-15',label:'이사업체·청소·엘리베이터 예약'},
+    {date:'2027-01-15',label:'새집 실측·시설 점검'},
+    {date:'2027-02-05',label:'설 연휴 전 최종 준비 완료'},
+    {date:'2027-02-11',label:'이사 당일'}
+  ];
+  var vendors = [
+    {id:'miso-a',name:'미소 · 비교견적 A',url:'https://www.miso.kr/moving',link:'견적 신청'},
+    {id:'miso-b',name:'미소 · 비교견적 B',url:'https://www.miso.kr/moving',link:'견적 신청'},
+    {id:'younggu',name:'영구크린',url:'https://www.mcygclean.com/service/cs.jsp',link:'상담 안내'},
+    {id:'yes2424',name:'YES2424 · 경인팀',url:'https://miso.kr/partners/15418',link:'팀 정보'}
+  ];
+  var state = {checked:{},quotes:{},memo:''};
+  try {
+    var stored = JSON.parse(localStorage.getItem(KEY) || '{}');
+    if(stored && typeof stored==='object'){
+      state.checked = stored.checked && typeof stored.checked==='object' ? stored.checked : {};
+      state.quotes = stored.quotes && typeof stored.quotes==='object' ? stored.quotes : {};
+      state.memo = typeof stored.memo==='string' ? stored.memo : '';
+    }
+  } catch(e) {}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+  function elem(name,className,txt){var e=document.createElement(name);if(className)e.className=className;if(txt!==undefined)e.textContent=txt;return e}
+  function kstDateParts(){var p=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Seoul',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(new Date());var result={};p.forEach(function(x){if(x.type==='year'||x.type==='month'||x.type==='day')result[x.type]=Number(x.value)});return result}
+  var today=kstDateParts();
+  function utcDay(y,m,d){return Date.UTC(y,m-1,d)/86400000}
+  var todayDay=utcDay(today.year,today.month,today.day);
+  var lastDay=utcDay(2027,2,11);
+  var days=lastDay-todayDay;
+  document.getElementById('dday').textContent=days>0?'D-'+days:days===0?'D-DAY':'D+'+Math.abs(days);
+  function currentMonth(){if(today.year===2026&&today.month<=11)return 'nov';if(today.year===2026)return 'dec';if(today.year===2027&&today.month===1)return 'jan';return 'feb'}
+  function updateStats(){
+    var all=groups.reduce(function(a,g){return a+g.items.length},0);
+    var done=groups.reduce(function(a,g){return a+g.items.filter(function(t){return !!state.checked[t[0]]}).length},0);
+    var pct=Math.round(done/all*100);
+    document.getElementById('progress-num').textContent=pct+'%';
+    document.getElementById('progress-bar').style.width=pct+'%';
+    document.getElementById('progress-caption').textContent='완료 '+done+' / 전체 '+all+'개';
+    document.getElementById('quote-count').textContent=vendors.filter(function(v){return Number(state.quotes[v.id]&&state.quotes[v.id].amount)>0}).length+' / 4곳';
+  }
+  var next=milestones.find(function(m){return utcDay(Number(m.date.slice(0,4)),Number(m.date.slice(5,7)),Number(m.date.slice(8,10)))>=todayDay}) || milestones[milestones.length-1];
+  document.getElementById('next-date').textContent=next.date.slice(5).replace('-',' / ');
+  document.getElementById('next-milestone').textContent=next.label;
+  var milestoneRoot=document.getElementById('milestone-list');
+  milestones.forEach(function(m){
+    var step=elem('div','step');
+    step.append(elem('b','',m.date.slice(5).replace('-','.')+' · '+m.label));
+    milestoneRoot.append(step);
+  });
+  function renderMonth(key){
+    var info=periods[key], panel=document.getElementById('month-panel');
+    panel.replaceChildren();
+    panel.append(elem('span','month-tag',info.label));
+    panel.append(elem('h3','month-heading',info.title));
+    panel.append(elem('p','month-note',info.note));
+    var ul=elem('ul','month-list');
+    info.items.forEach(function(t){var li=elem('li');li.append(elem('span','bullet'),elem('span','',t));ul.append(li)});
+    panel.append(ul);
+    document.querySelectorAll('#month-tabs button').forEach(function(b){b.classList.toggle('active',b.dataset.month===key)});
+  }
+  document.getElementById('month-tabs').addEventListener('click',function(e){var b=e.target.closest('button[data-month]');if(b)renderMonth(b.dataset.month)});
+  renderMonth(currentMonth());
+  var taskFilter='all';
+  function renderTasks(){
+    var root=document.getElementById('task-groups');root.replaceChildren();
+    var hasAny=false;
+    groups.forEach(function(g){
+      var items=g.items.filter(function(t){return taskFilter==='all'||(taskFilter==='done'?!!state.checked[t[0]]:!state.checked[t[0]])});
+      if(!items.length)return;
+      hasAny=true;
+      var group=elem('div','group'), head=elem('div','group-head');
+      head.append(elem('h3','',g.name),elem('small','',g.due+' · '+g.items.filter(function(t){return !!state.checked[t[0]]}).length+'/'+g.items.length+' 완료'));
+      group.append(head);
+      var box=elem('div','group-content');
+      items.forEach(function(t){
+        var label=elem('label','task'+(state.checked[t[0]]?' done':''));
+        var check=elem('input');check.type='checkbox';check.checked=!!state.checked[t[0]];check.setAttribute('aria-label',t[1]);
+        check.addEventListener('change',function(){state.checked[t[0]]=check.checked;save();updateStats();renderTasks()});
+        label.append(check,elem('span','',t[1]),elem('small','due',t[2]));
+        box.append(label);
+      });
+      group.append(box);root.append(group);
+    });
+    if(!hasAny)root.append(elem('p','empty','표시할 항목이 없습니다.'));
+    document.querySelectorAll('#task-filters button').forEach(function(b){b.classList.toggle('active',b.dataset.filter===taskFilter)});
+  }
+  document.getElementById('task-filters').addEventListener('click',function(e){var b=e.target.closest('button[data-filter]');if(b){taskFilter=b.dataset.filter;renderTasks()}});
+  document.getElementById('reset-btn').addEventListener('click',function(){if(confirm('체크리스트 완료 표시만 모두 초기화할까요?')){state.checked={};save();renderTasks();updateStats()}});
+  function quoteValue(id,key){return state.quotes[id]&&state.quotes[id][key]!==undefined?String(state.quotes[id][key]):''}
+  var quoteBody=document.getElementById('quote-body');
+  vendors.forEach(function(v){
+    var tr=elem('tr'), td=elem('td'), wrapper=elem('div','provider',v.name);
+    var a=elem('a','external',v.link+' ↗');a.href=v.url;a.target='_blank';a.rel='noopener noreferrer';wrapper.append(a);td.append(wrapper);tr.append(td);
+    [{key:'amount',placeholder:'예: 250',type:'number'},{key:'crew',placeholder:'예: 5톤 / 5명'},{key:'included',placeholder:'예: 포장·조립 포함'},{key:'notes',placeholder:'대기료, 보험, 후기 등'}].forEach(function(col){
+      var cell=elem('td'), input=elem('input');
+      input.type=col.type||'text';input.placeholder=col.placeholder;input.value=quoteValue(v.id,col.key);
+      input.setAttribute('aria-label',v.name+' '+col.key);
+      if(col.type==='number'){input.min='0';input.step='1';input.inputMode='numeric'}
+      input.addEventListener('input',function(){if(!state.quotes[v.id])state.quotes[v.id]={};state.quotes[v.id][col.key]=input.value;save();updateStats();updateQuoteInsight()});
+      cell.append(input);tr.append(cell);
+    });
+    quoteBody.append(tr);
+  });
+  function updateQuoteInsight(){
+    var entered=vendors.map(function(v){return{name:v.name,amount:Number(quoteValue(v.id,'amount'))}}).filter(function(v){return Number.isFinite(v.amount)&&v.amount>0});
+    var box=document.getElementById('quote-insight');box.replaceChildren();
+    if(entered.length<2){box.append(elem('strong','','아직 비교할 견적이 충분하지 않습니다.'),elem('span','','2곳 이상 금액을 입력하면 차이를 계산합니다.'));return}
+    entered.sort(function(a,b){return a.amount-b.amount});
+    var diff=entered[entered.length-1].amount-entered[0].amount;
+    box.append(elem('strong','','현재 최저 견적: '+entered[0].name+' · '+entered[0].amount.toLocaleString('ko-KR')+'만원'));
+    box.append(elem('span','','최고 견적과 차이 '+diff.toLocaleString('ko-KR')+'만원 · 최종 선택은 작업팀과 보상조건까지 확인하세요.'));
+  }
+  var memo=document.getElementById('memo');memo.value=state.memo;
+  memo.addEventListener('input',function(){state.memo=memo.value;save()});
+  document.getElementById('export-btn').addEventListener('click',function(){
+    var output={exportedAt:new Date().toISOString(),targetDate:'2027-02-11',data:state};
+    var blob=new Blob([JSON.stringify(output,null,2)],{type:'application/json;charset=utf-8'});
+    var url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='move-2027-backup.json';document.body.append(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url)},1000);
+  });
+  document.getElementById('print-btn').addEventListener('click',function(){window.print()});
+  var navLinks=document.querySelectorAll('.nav a');
+  navLinks.forEach(function(a){a.addEventListener('click',function(){navLinks.forEach(function(x){x.classList.remove('active')});a.classList.add('active')})});
+  renderTasks();updateStats();updateQuoteInsight();
+})();
+</script>
+</body>
+</html>
